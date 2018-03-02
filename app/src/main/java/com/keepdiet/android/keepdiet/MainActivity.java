@@ -17,12 +17,16 @@ public class MainActivity extends AppCompatActivity {
     public static final String GROUP = "group";
     public static final String MORE = "more";
 
+    //disable back button
+    @Override
+    public void onBackPressed(){}
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //forbid bottom navigation view shifting mode
+        //disable bottom navigation view shifting mode
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation_bar);
         BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
 

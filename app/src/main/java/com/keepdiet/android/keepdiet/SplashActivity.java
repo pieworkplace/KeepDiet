@@ -7,7 +7,7 @@ import android.os.Handler;
 
 public class SplashActivity extends Activity {
 
-    private static final int MILLISECOND_TO_WAIT = 3000;
+    private static final int MILLISECOND_TO_WAIT = 1000;
     Handler handler = new Handler();
     @Override
     protected void onCreate(Bundle savedInstanceState) {

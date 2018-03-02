@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">KeepDiet</string>
+    <string name="bottom_bar_diary">Diary</string>
+    <string name="bottom_bar_feed">Feed</string>
+    <string name="bottom_bar_group">Group</string>
+    <string name="bottom_bar_more">More</string>
 </resources>

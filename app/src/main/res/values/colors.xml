@@ -2,7 +2,7 @@
 <resources>
     <color name="colorPrimary">#808080</color><!--首要颜色-->
     <color name="colorPrimaryDark">#555555</color><!--首要颜色暗色-->
-    <color name="colorAccent">#FF4081</color><!--色彩强调-->
+    <color name="colorAccent">#c0c0c0</color><!--色彩强调-->
 
     <color name="black">#000000</color><!--黑色 -->
     <color name="white">#FFFFFF</color><!--白色-->

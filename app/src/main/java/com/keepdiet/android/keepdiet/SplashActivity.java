@@ -20,4 +20,5 @@ public class SplashActivity extends Activity {
             }
         }, MILLISECOND_TO_WAIT);
     }
+
 }

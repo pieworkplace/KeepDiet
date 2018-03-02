@@ -8,6 +8,18 @@
         android:id="@+id/diary_fragment_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"></FrameLayout>
+    <FrameLayout
+        android:id="@+id/feed_fragment_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></FrameLayout>
+    <FrameLayout
+        android:id="@+id/group_fragment_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></FrameLayout>
+    <FrameLayout
+        android:id="@+id/more_fragment_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></FrameLayout>
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/bottom_navigation_bar"

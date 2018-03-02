@@ -12,6 +12,11 @@ import com.keepdiet.android.keepdiet.utils.BottomNavigationViewHelper;
 
 public class MainActivity extends AppCompatActivity {
 
+    public static final String DIARY = "diary";
+    public static final String FEED = "feed";
+    public static final String GROUP = "group";
+    public static final String MORE = "more";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,27 +26,56 @@ public class MainActivity extends AppCompatActivity {
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation_bar);
         BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
 
-        addDiaryFragment();
+        addFragments();
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                FragmentManager fragmentManager = getSupportFragmentManager();
+                FragmentTransaction transaction = fragmentManager.beginTransaction();
+                DiaryFragment diaryFragment = (DiaryFragment) fragmentManager.findFragmentByTag(DIARY);
+                FeedFragment feedFragment = (FeedFragment) fragmentManager.findFragmentByTag(FEED);
+                GroupFragment groupFragment = (GroupFragment) fragmentManager.findFragmentByTag(GROUP);
+                MoreFragment moreFragment = (MoreFragment) fragmentManager.findFragmentByTag(MORE);
+                transaction.hide(diaryFragment);
+                transaction.hide(feedFragment);
+                transaction.hide(groupFragment);
+                transaction.hide(moreFragment);
+
                 switch (item.getItemId()){
                     case R.id.bottom_navigation_bar_item_diary:
+                        transaction.show(diaryFragment);
+                        break;
                     case R.id.bottom_navigation_bar_item_feed:
+                        transaction.show(feedFragment);
+                        break;
                     case R.id.bottom_navigation_bar_item_group:
+                        transaction.show(groupFragment);
+                        break;
                     case R.id.bottom_navigation_bar_item_more:
+                        transaction.show(moreFragment);
                 }
+                transaction.commit();
                 return true;
             }
         });
     }
 
-    private void addDiaryFragment() {
+    private void addFragments() {
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction transaction = fragmentManager.beginTransaction();
         DiaryFragment diaryFragment = new DiaryFragment();
-        transaction.add(R.id.diary_fragment_layout, diaryFragment);
+        FeedFragment feedFragment = new FeedFragment();
+        GroupFragment groupFragment = new GroupFragment();
+        MoreFragment moreFragment = new MoreFragment();
+        transaction.add(R.id.diary_fragment_layout, diaryFragment, DIARY);
+        transaction.add(R.id.feed_fragment_layout, feedFragment, FEED);
+        transaction.add(R.id.group_fragment_layout, groupFragment, GROUP);
+        transaction.add(R.id.more_fragment_layout, moreFragment, MORE);
+        transaction.hide(feedFragment);
+        transaction.hide(groupFragment);
+        transaction.hide(moreFragment);
         transaction.commit();
     }
 }

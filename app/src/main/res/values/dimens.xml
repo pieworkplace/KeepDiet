@@ -6,4 +6,5 @@
     <dimen name="splash_image_scale">2.5</dimen>
     <dimen name="toolbar_title_textsize">20sp</dimen>
     <dimen name="toolbar_textsize">20sp</dimen>
+    <dimen name="diary_padding">10dp</dimen>
 </resources>

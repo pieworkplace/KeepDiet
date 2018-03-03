@@ -5,4 +5,5 @@
     <string name="bottom_bar_group">Group</string>
     <string name="bottom_bar_more">More</string>
     <string name="toolbar_title">Title</string>
+    <string name="title_activity_user_target">UserTargetActivity</string>
 </resources>

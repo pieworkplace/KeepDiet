@@ -21,4 +21,12 @@
     <string name="diary_food_dinner">Dinner</string>
     <string name="diary_food_snacks">Snacks</string>
     <string name="diary_food_summary">Nutrition Summary</string>
+    <string name="feed_title">Post Whatever you like!</string>
+    <string name="feed_mike">mike</string>
+    <string name="feed_Vino">Vino</string>
+    <string name="feed_Tony">Tony</string>
+    <string name="feed_button_text">Post Now!</string>
+    <string name="vino">Vino</string>
+    <string name="olivia">Olivia</string>
+    <string name="tony">Tony</string>
 </resources>

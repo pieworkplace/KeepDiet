@@ -14,4 +14,10 @@
     <string name="diary_viewpager_food">Food</string>
     <string name="diary_viewpager_exercise">Exercise</string>
     <string name="diary_viewpager_index">Index</string>
+    <string name="diary_food_breakfast">Breakfast</string>
+    <string name="diary_add">Add</string>
+    <string name="diary_add_food">Add Food</string>
+    <string name="diary_food_lunch">Lunch</string>
+    <string name="diary_food_dinner">Dinner</string>
+    <string name="diary_food_snacks">Snacks</string>
 </resources>

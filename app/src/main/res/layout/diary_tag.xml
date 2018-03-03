@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/diary_target_table">
+    <TableRow
+        android:background="@color/colorPrimary"
+        android:layout_marginTop="@dimen/diary_tag_large_padding">
+    <TextView
+        android:id="@+id/diary_tag_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        tools:text="@string/diary_food_breakfast"
+        style="@style/TextAppearance.AppCompat.Inverse"
+        android:paddingLeft="@dimen/diary_tag_large_padding"
+        android:paddingTop="@dimen/diary_tag_small_padding"
+        android:paddingBottom="@dimen/diary_tag_small_padding"/>
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        tools:text="200"
+        style="@style/TextAppearance.AppCompat.Inverse"
+        android:paddingTop="@dimen/diary_tag_small_padding"
+        android:paddingBottom="@dimen/diary_tag_small_padding"
+        android:paddingRight="@dimen/diary_tag_large_padding"
+        android:gravity="right"/>
+    </TableRow>
+    <TableRow>
+        <FrameLayout />
+    </TableRow>
+    <TableRow
+        android:background="@color/white">
+        <TextView
+            android:id="@+id/diary_add_button"
+            android:text="@string/diary_add"
+            android:drawablePadding="@dimen/diary_tag_small_padding"
+            android:gravity="center"
+            android:paddingTop="@dimen/diary_tag_small_padding"
+            android:paddingBottom="@dimen/diary_tag_small_padding"
+            android:paddingLeft="@dimen/diary_tag_large_padding"
+            android:drawableStart="@drawable/ic_add_black_24dp"
+            android:drawableLeft="@drawable/ic_add_black_24dp" />
+
+    </TableRow>
+</TableLayout>

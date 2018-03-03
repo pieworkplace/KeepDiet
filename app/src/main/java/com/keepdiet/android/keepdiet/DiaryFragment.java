@@ -42,7 +42,7 @@ public class DiaryFragment extends Fragment {
         //set view pager and its tabs
         ViewPager viewPager = view.findViewById(R.id.diary_viewpager);
         viewPager.setAdapter(new DiaryPagerAdapter(getFragmentManager()));
-        TabLayout tabLayout = view.findViewById(R.id.diary_tablayout);
+        TabLayout tabLayout = view.findViewById(R.id.diary_table_layout);
         tabLayout.setupWithViewPager(viewPager);
         //create pages in view pager
         foodView = new DiaryFoodFragment();

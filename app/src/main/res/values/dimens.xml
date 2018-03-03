@@ -7,4 +7,6 @@
     <dimen name="toolbar_title_textsize">20sp</dimen>
     <dimen name="toolbar_textsize">20sp</dimen>
     <dimen name="diary_padding">10dp</dimen>
+    <dimen name="diary_tag_small_padding">5dp</dimen>
+    <dimen name="diary_tag_large_padding">20dp</dimen>
 </resources>

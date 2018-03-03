@@ -5,8 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/diary_target_table">
     <TableRow
-        android:background="@color/colorPrimary"
-        android:layout_marginTop="@dimen/diary_tag_large_padding">
+        android:background="@color/colorPrimary">
     <TextView
         android:id="@+id/diary_tag_title"
         android:layout_width="0dp"
@@ -32,7 +31,8 @@
         <FrameLayout />
     </TableRow>
     <TableRow
-        android:background="@color/white">
+        android:background="@color/white"
+        android:layout_marginBottom="@dimen/diary_tag_large_padding">
         <TextView
             android:id="@+id/diary_add_button"
             android:text="@string/diary_add"

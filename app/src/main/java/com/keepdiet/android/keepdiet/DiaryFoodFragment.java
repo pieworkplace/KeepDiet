@@ -46,8 +46,21 @@ public class DiaryFoodFragment extends Fragment {
                 case 3:
                     title.setText(R.string.diary_food_snacks);
             }
-        linearLayout.addView(smallView);
+            linearLayout.addView(smallView);
         }
+        View buttonView = getLayoutInflater().inflate(R.layout.diary_tag_button, null);
+        ((TextView) buttonView.findViewById(R.id.diary_add_button)).setText(R.string.diary_food_summary);
+        linearLayout.addView(buttonView);
+        buttonView = getLayoutInflater().inflate(R.layout.diary_tag_button, null);
+        ((TextView) buttonView.findViewById(R.id.diary_add_button)).setText(R.string.diary_food_summary);
+        linearLayout.addView(buttonView);
+        buttonView = getLayoutInflater().inflate(R.layout.diary_tag_button, null);
+        ((TextView) buttonView.findViewById(R.id.diary_add_button)).setText(R.string.diary_food_summary);
+        linearLayout.addView(buttonView);
+        buttonView = getLayoutInflater().inflate(R.layout.diary_tag_button, null);
+        ((TextView) buttonView.findViewById(R.id.diary_add_button)).setText(R.string.diary_food_summary);
+        linearLayout.addView(buttonView);
+
         return view;
     }
 

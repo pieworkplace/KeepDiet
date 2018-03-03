@@ -21,7 +21,7 @@
         android:textStyle="bold"
         android:gravity="center"
         android:drawablePadding="0dp"
-        android:background="#111144"
+        android:background="#111166"
         android:text="Group Members" />
     <TextView
         android:id="@+id/user1"

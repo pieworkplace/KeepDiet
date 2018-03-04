@@ -17,7 +17,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".UserTargetActivity"></activity>
+        <activity android:name=".UserTargetActivity" />
+        <activity android:name=".startGroup" />
+        <activity android:name=".setTarget"></activity>
     </application>
 
 </manifest>

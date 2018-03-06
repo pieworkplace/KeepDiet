@@ -23,44 +23,23 @@
 
 
     <!--<ImageView-->
-        <!--android:layout_width="50dp"-->
-        <!--android:layout_height="50dp"-->
-        <!--/>-->
+    <!--android:layout_width="50dp"-->
+    <!--android:layout_height="50dp"-->
+    <!--/>-->
 
     <TextView
-        android:id="@+id/user1"
+        android:id="@+id/group"
         android:layout_width="match_parent"
         android:layout_height="64dp"
         android:textSize="22sp"
         android:gravity=""
-        android:drawableLeft="@drawable/ic_account_circle_black_36dp"
+        android:drawableLeft="@drawable/ic_people_black_36dp"
         android:drawablePadding="0dp"
         android:layout_marginTop="5dp"
         android:background="@drawable/txt_radiuborder"
-        android:text="  Haoting Li" />
+        android:text="  KeepDiet" />
 
-    <TextView
-        android:id="@+id/user2"
-        android:layout_width="match_parent"
-        android:layout_height="64dp"
-        android:textSize="22sp"
-        android:gravity=""
-        android:layout_marginTop="5dp"
-        android:drawableLeft="@drawable/ic_account_circle_black_36dp"
-        android:drawablePadding="0dp"
-        android:background="@drawable/txt_radiuborder"
-        android:text="  Bill Gates" />
-    <TextView
-        android:id="@+id/user3"
-        android:layout_width="match_parent"
-        android:layout_height="64dp"
-        android:textSize="22sp"
-        android:gravity=""
-        android:layout_marginTop="5dp"
-        android:drawableLeft="@drawable/ic_account_circle_black_36dp"
-        android:drawablePadding="0dp"
-        android:background="@drawable/txt_radiuborder"
-        android:text="  Donald Trump" />
+
 
 
 

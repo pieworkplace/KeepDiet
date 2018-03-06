@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#FFFFFF"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_diary"
+        android:background="@color/colorPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Start Group"
+            android:textColor="@color/white"
+            android:layout_gravity="center"
+            android:textSize="@dimen/toolbar_textsize"/>
+    </android.support.v7.widget.Toolbar>
+
+    <TextView
+        android:id="@+id/txtSetTarget"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:textSize="22sp"
+        android:gravity="center_vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:drawablePadding="0dp"
+        android:text="Set Your Daily Targets:" />
+    <EditText
+        android:id="@+id/groupName"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:hint="Target" />
+    <TextView
+        android:id="@+id/addTarget"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:textSize="22sp"
+        android:gravity="center_vertical"
+        android:drawableLeft="@drawable/ic_add_circle_outline_black_36dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:layout_marginTop="20dp"
+        android:drawablePadding="0dp"
+        android:text="   Add a Target" />
+
+</LinearLayout>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <!-- 设置一个黑色边框 -->
+    <stroke android:width="2px" android:color="#000000"/>
+    <!-- 渐变 -->
+    <gradient
+        android:angle="270"
+        android:endColor="#CCCCCC"
+        android:startColor="#CCCCCC" />
+    <!-- 设置四个圆角的半径 -->
+
+
+
+</shape>

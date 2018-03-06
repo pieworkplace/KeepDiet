@@ -19,7 +19,10 @@
         </activity>
         <activity android:name=".UserTargetActivity" />
         <activity android:name=".startGroup" />
-        <activity android:name=".setTarget"></activity>
+        <activity android:name=".setTarget" />
+        <activity android:name=".FindGroup" />
+        <activity android:name=".FindGroupResult" />
+        <activity android:name=".GroupInformation"></activity>
     </application>
 
 </manifest>

@@ -52,7 +52,7 @@
         android:background="@drawable/txt_rectborder"
         android:text="Jogging 5km" />
     <TextView
-        android:id="@+id/target2"
+        android:id="@+id/target3"
         android:layout_width="match_parent"
         android:layout_height="64dp"
         android:textSize="22sp"

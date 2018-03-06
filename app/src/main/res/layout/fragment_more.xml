@@ -37,7 +37,7 @@
         android:layout_marginTop="5dp"
         android:paddingLeft="8dp"
         android:background="@drawable/txt_radiuborder"
-        android:text="  Account name" />
+        android:text="  Haoting Li" />
 
     <TextView
     android:id="@+id/foodEnergy"

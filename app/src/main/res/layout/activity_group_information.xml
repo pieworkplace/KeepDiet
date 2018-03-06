@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#FFFFFF"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_diary"
+        android:background="@color/colorPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Group Information"
+            android:textColor="@color/white"
+            android:layout_gravity="center"
+            android:textSize="@dimen/toolbar_textsize"/>
+    </android.support.v7.widget.Toolbar>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:textSize="22sp"
+        android:gravity="center_vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:drawableLeft="@drawable/ic_people_black_36dp"
+        android:drawablePadding="0dp"
+        android:text="  Group Name:" />
+    <TextView
+        android:id="@+id/groupName"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:textSize="22sp"
+        android:gravity="center_vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:drawablePadding="0dp"
+        android:text="KeepDiet" />
+    <TextView
+    android:id="@+id/findGroupLocation"
+    android:layout_width="match_parent"
+    android:layout_height="44dp"
+    android:textSize="22sp"
+    android:gravity="center_vertical"
+    android:drawableLeft="@drawable/ic_location_on_black_36dp"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:drawablePadding="0dp"
+    android:text="  Group Location" />
+    <TextView
+        android:id="@+id/groupLocation"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:textSize="22sp"
+        android:gravity="center_vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:drawablePadding="0dp"
+        android:text="Atlanta" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:textSize="22sp"
+        android:gravity="center_vertical"
+        android:drawableLeft="@drawable/ic_location_on_black_36dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:drawablePadding="0dp"
+        android:text="  Group Target" />
+    <TextView
+        android:id="@+id/groupTarget"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:textSize="22sp"
+        android:gravity="center_vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:drawablePadding="0dp"
+        android:text="Lose Weight" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:textSize="22sp"
+        android:gravity="center_vertical"
+        android:drawableLeft="@drawable/ic_format_list_numbered_black_36dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:drawablePadding="0dp"
+        android:text=" Current Group Member" />
+    <TextView
+        android:id="@+id/member"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:textSize="22sp"
+        android:gravity="center_vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:drawablePadding="0dp"
+        android:text="5" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:textSize="22sp"
+        android:gravity="center_vertical"
+        android:drawableLeft="@drawable/ic_vertical_align_top_black_36dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:drawablePadding="0dp"
+        android:text=" Maximum Group Member" />
+    <TextView
+        android:id="@+id/maxMember"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:textSize="22sp"
+        android:gravity="center_vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:drawablePadding="0dp"
+        android:text="6" />
+
+    <Button
+        android:id="@+id/join"
+        android:layout_width="244dp"
+        android:layout_height="wrap_content"
+        android:text="JOIN !"
+        android:textSize="22dp"/>
+
+
+</LinearLayout>

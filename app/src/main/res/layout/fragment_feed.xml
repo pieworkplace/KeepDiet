@@ -1,28 +1,216 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/ocean"
     tools:context="com.keepdiet.android.keepdiet.FeedFragment">
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar_feed"
-        android:background="@color/colorPrimary"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/app_name"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
+            android:textStyle="italic"
             android:layout_gravity="center"
             android:textSize="@dimen/toolbar_textsize"/>
     </android.support.v7.widget.Toolbar>
 
     <!-- TODO: Update blank fragment layout -->
-
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/bottom_bar_feed"
-        android:layout_below="@id/toolbar_feed"/>
+        android:layout_height="match_parent">
 
-</RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/mike"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/feed_mike"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:drawableLeft="@drawable/ic_filter_drama_black_24dp"
+                    android:drawablePadding="5dp"
+                    android:paddingLeft="10dp"/>
+
+                <TextView
+                    android:id="@+id/mike_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/mike"
+                    android:gravity="right"
+                    android:text="01/03/2018"
+                    android:textStyle="bold"
+                    android:paddingRight="10dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/mike"
+                    android:text="Today I am very happy to achieve my goals and gained 50 points in my own property.\n I am only 160lbs now and I think I am in my strongest period during my whole life.\n Cheers!!!!!"
+                    android:textStyle="italic"
+                    android:paddingLeft="20dp"
+                    android:paddingBottom="30dp"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/Vino"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/vino"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:drawableLeft="@drawable/ic_flash_on_black_24dp"
+                    android:paddingLeft="10dp" />
+
+                <TextView
+                    android:id="@+id/Vino_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/Vino"
+                    android:gravity="right"
+                    android:text="21/02/2018"
+                    android:textStyle="bold"
+                    android:paddingRight="10dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/Vino"
+                    android:text="Cool guys! I have beaten Andy in the Diet Competition! \n @Andy You should go home and exercise a bit more in your gym, buddy.\n LOL "
+                    android:textStyle="italic"
+                    android:paddingLeft="20dp"
+                    android:paddingBottom="30dp"/>
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/Olivia"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/olivia"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:drawableLeft="@drawable/ic_wb_sunny_black_24dp"
+                    android:paddingLeft="10dp"
+                    android:drawablePadding="5dp"/>
+
+                <TextView
+                    android:id="@+id/Olivia_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/Olivia"
+                    android:gravity="right"
+                    android:text="16/02/2018"
+                    android:textStyle="bold"
+                    android:paddingRight="10dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/Olivia"
+                    android:text="The weather is very nice today! I can't wait exercising a little bit and KeepDiet! \n Does anyone else want to join us @CRC_Georgia_Tech \n Let's have fun today!!!"
+                    android:textStyle="italic"
+                    android:paddingLeft="20dp"
+                    android:paddingBottom="30dp"/>
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/Tony"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tony"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:drawableLeft="@drawable/ic_toys_black_24dp"
+                    android:paddingLeft="10dp"
+                    android:drawablePadding="5dp"/>
+
+                <TextView
+                    android:id="@+id/Tony_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/Tony"
+                    android:gravity="right"
+                    android:text="08/02/2018"
+                    android:textStyle="bold"
+                    android:paddingRight="10dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/Tony"
+                    android:text="I am a new user of this application, and I really want to lose some weight and keep diet. \n Anyone who doesn't join any group can come to join me!!! \n I am sure that we will have a great time together and win more points!!!"
+                    android:textStyle="italic"
+                    android:paddingLeft="20dp"
+                    android:paddingBottom="30dp"/>
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/KeepDiet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:drawableLeft="@drawable/ic_account_circle_black_24dp"
+                    android:drawablePadding="5dp"
+                    android:paddingLeft="10dp"
+                    android:text="KeepDiet (Official Account)"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/KeepDiet_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/KeepDiet"
+                    android:gravity="right"
+                    android:text="31/01/2018"
+                    android:textStyle="bold"
+                    android:paddingRight="10dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/KeepDiet"
+                    android:text=" 1st Keep Diet Competition is now open to registration!!! \n Win more than 50000 points for the final winner!!! \n Come and Join us now! @KeepDiet_Competition"
+                    android:textStyle="italic"
+                    android:paddingLeft="20dp"
+                    android:paddingBottom="30dp"/>
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

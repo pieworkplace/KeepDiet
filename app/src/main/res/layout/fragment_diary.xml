@@ -2,6 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.keepdiet.android.keepdiet.DiaryFragment">
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar_diary"
@@ -17,11 +18,85 @@
             android:textSize="@dimen/toolbar_textsize"/>
     </android.support.v7.widget.Toolbar>
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <TableLayout
+        android:id="@+id/diary_target_table"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_below="@id/toolbar_diary"
-        android:text="@string/bottom_bar_diary" />
+        android:background="@color/white"
+        android:stretchColumns="*"
+        android:padding="@dimen/diary_padding">
+        <TableRow>
+            <TextView
+                android:id="@+id/diary_target_number"
+                tools:text="2000"
+                style="@style/TextAppearance.AppCompat.Body1"
+                android:gravity="center" />
+            <TextView
+                android:text="-"
+                android:gravity="center"/>
+            <TextView
+                android:id="@+id/diary_food_number"
+                tools:text="800"
+                style="@style/TextAppearance.AppCompat.Body1"
+                android:gravity="center"/>
+            <TextView
+                android:text="+"
+                android:gravity="center"/>
+            <TextView
+                android:id="@+id/diary_exercise_number"
+                tools:text="500"
+                style="@style/TextAppearance.AppCompat.Body1"
+                android:gravity="center"/>
+            <TextView
+                android:text="="
+                android:gravity="center"/>
+            <TextView
+                android:id="@+id/diary_remain_number"
+                tools:text="1700"
+                style="@style/TextAppearance.AppCompat.Body1"
+                android:gravity="center"/>
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:text="@string/diary_target_target"
+                android:gravity="center"/>
+            <TextView
+                tools:text=""
+                android:gravity="center"/>
+            <TextView
+                android:text="@string/diary_target_food"
+                android:gravity="center"/>
+            <TextView
+                tools:text=""
+                android:gravity="center"/>
+            <TextView
+                android:text="@string/diary_target_exercise"
+                android:gravity="center"/>
+            <TextView
+                tools:text=""
+                android:gravity="center"/>
+            <TextView
+                android:text="@string/diary_target_remain"
+                android:gravity="center"/>
+        </TableRow>
+    </TableLayout>
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/diary_table_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/diary_target_table"
+        app:tabMode="fixed"
+        app:tabGravity="fill"
+        android:layout_marginBottom="@dimen/diary_tag_large_padding">
+
+    </android.support.design.widget.TabLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/diary_viewpager"
+        android:layout_below="@id/diary_table_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
 </RelativeLayout>

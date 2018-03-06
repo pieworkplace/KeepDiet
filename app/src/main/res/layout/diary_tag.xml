@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/whitesmoke">
+    <TextView
+        android:id="@+id/diary_tag_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="@string/diary_food_breakfast"
+        style="@style/TextAppearance.AppCompat.Inverse"
+        android:background="@color/colorPrimary"
+        android:paddingLeft="@dimen/diary_tag_large_padding"
+        android:paddingTop="@dimen/diary_tag_small_padding"
+        android:paddingBottom="@dimen/diary_tag_small_padding"/>
+    <TextView
+        android:id="@+id/diary_tag_value"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/diary_tag_title"
+        android:background="@color/colorPrimary"
+        tools:text="200"
+        style="@style/TextAppearance.AppCompat.Inverse"
+        android:paddingTop="@dimen/diary_tag_small_padding"
+        android:paddingBottom="@dimen/diary_tag_small_padding"
+        android:paddingRight="@dimen/diary_tag_large_padding"
+        android:gravity="right"/>
+        <LinearLayout
+            android:id="@+id/diary_tag_content"
+            android:layout_below="@id/diary_tag_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+        <TextView
+            android:id="@+id/diary_add_button"
+            android:layout_below="@id/diary_tag_content"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="@string/diary_add"
+            android:background="@color/white"
+            android:drawablePadding="@dimen/diary_tag_small_padding"
+            android:gravity="center_vertical"
+            android:paddingTop="@dimen/diary_tag_small_padding"
+            android:paddingBottom="@dimen/diary_tag_small_padding"
+            android:paddingLeft="@dimen/diary_tag_large_padding"
+            android:drawableStart="@drawable/ic_add_black_24dp"
+            android:drawableLeft="@drawable/ic_add_black_24dp"
+            android:layout_marginBottom="@dimen/diary_tag_large_padding"/>
+
+</RelativeLayout>

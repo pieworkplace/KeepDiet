@@ -5,8 +5,28 @@
     <string name="bottom_bar_group">Group</string>
     <string name="bottom_bar_more">More</string>
     <string name="toolbar_title">Title</string>
-    <string name="title_activity_user_target">UserTargetActivity</string>
+    <string name="diary_target_target">Goal</string>
+    <string name="diary_target_food">Food</string>
+    <string name="diary_target_exercise">Exercise</string>
+    <string name="diary_target_remain">Remaining</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="diary_viewpager_food">Food</string>
+    <string name="diary_viewpager_exercise">Exercise</string>
+    <string name="diary_viewpager_index">Index</string>
+    <string name="diary_food_breakfast">Breakfast</string>
+    <string name="diary_add">Add</string>
+    <string name="diary_add_food">Add Food</string>
+    <string name="diary_food_lunch">Lunch</string>
+    <string name="diary_food_dinner">Dinner</string>
+    <string name="diary_food_snacks">Snacks</string>
+    <string name="diary_food_summary">Nutrition Summary</string>
+    <string name="feed_title">Post Whatever you like!</string>
+    <string name="feed_mike">mike</string>
+    <string name="feed_Vino">Vino</string>
+    <string name="feed_Tony">Tony</string>
+    <string name="feed_button_text">Post Now!</string>
+    <string name="vino">Vino</string>
+    <string name="olivia">Olivia</string>
+    <string name="tony">Tony</string>
 </resources>

@@ -6,5 +6,8 @@
     <dimen name="splash_image_scale">2.5</dimen>
     <dimen name="toolbar_title_textsize">20sp</dimen>
     <dimen name="toolbar_textsize">20sp</dimen>
-    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="diary_padding">10dp</dimen>
+    <dimen name="diary_tag_small_padding">5dp</dimen>
+    <dimen name="diary_tag_large_padding">20dp</dimen>
+    <dimen name="diary_button_corner_radius">5dp</dimen>
 </resources>

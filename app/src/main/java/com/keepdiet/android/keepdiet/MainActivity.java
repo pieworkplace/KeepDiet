@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     public static final String FEED = "feed";
     public static final String GROUP = "group";
     public static final String MORE = "more";
+
     public User user = new User();
 
     //disable back button
@@ -86,5 +87,9 @@ public class MainActivity extends AppCompatActivity {
         transaction.hide(groupFragment);
         transaction.hide(moreFragment);
         transaction.commit();
+    }
+
+    public User getUser() {
+        return user;
     }
 }

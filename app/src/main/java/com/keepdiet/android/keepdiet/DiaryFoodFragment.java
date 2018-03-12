@@ -10,6 +10,11 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.keepdiet.android.keepdiet.userData.Food;
+import com.keepdiet.android.keepdiet.userData.User;
+
+import java.util.List;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -26,81 +31,41 @@ public class DiaryFoodFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        //get user data
+        User user = ((MainActivity) getActivity()).getUser();
+
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_diary_food, container, false);
 
         //Inflate food page structure and update data
         LinearLayout linearLayout = view.findViewById(R.id.diary_food_fragment_layout);
 
-        //prepare to inflate 4 meals
-        View mealView;
-        LinearLayout contentView;
-        //Inflate breakfast
-        mealView = getLayoutInflater().inflate(R.layout.diary_tag, null);
-        ((TextView) mealView.findViewById(R.id.diary_tag_title)).setText(R.string.diary_food_breakfast);
-        ((TextView) mealView.findViewById(R.id.diary_add_button)).setText(R.string.diary_add_food);
-        contentView = mealView.findViewById(R.id.diary_tag_content);
-
-
-//        for (int i = 0; i < 4; i++) {
-//            View smallView = getLayoutInflater().inflate(R.layout.diary_tag, null);
-//            ((TextView)smallView.findViewById(R.id.diary_add_button)).setText(R.string.diary_add_food);
-//            TextView title = smallView.findViewById(R.id.diary_tag_title);
-//            TextView value = smallView.findViewById(R.id.diary_tag_value);
-//            LinearLayout content = smallView.findViewById(R.id.diary_tag_content);
-//            switch (i){
-//                //TODO change fake data
-//                case 0:
-//                    title.setText(R.string.diary_food_breakfast);
-//                    value.setText("300");
-//                    for (int j = 0; j < 2; j++){
-//                        View contentView = getLayoutInflater().inflate(R.layout.diary_content, null);
-//                        ((TextView) contentView.findViewById(R.id.diary_content_title)).setText("Fried Chicken");
-//                        ((TextView) contentView.findViewById(R.id.diary_content_value)).setText("200");
-//                        ((TextView) contentView.findViewById(R.id.diary_content_amount)).setText("1 pound");
-//                        content.addView(contentView);
-//                    }
-//                    break;
-//                case 1:
-//                    title.setText(R.string.diary_food_lunch);
-//                    value.setText("250");
-//                    for (int j = 0; j < 2; j++){
-//                        View contentView = getLayoutInflater().inflate(R.layout.diary_content, null);
-//                        ((TextView) contentView.findViewById(R.id.diary_content_title)).setText("Grand Big Mac");
-//                        ((TextView) contentView.findViewById(R.id.diary_content_value)).setText("200");
-//                        ((TextView) contentView.findViewById(R.id.diary_content_amount)).setText("1 serving");
-//                        content.addView(contentView);
-//                    }
-//                    break;
-//                case 2:
-//                    title.setText(R.string.diary_food_dinner);
-//                    value.setText("500");
-//                    for (int j = 0; j < 1; j++){
-//                        View contentView = getLayoutInflater().inflate(R.layout.diary_content, null);
-//                        ((TextView) contentView.findViewById(R.id.diary_content_title)).setText("Fried Chicken");
-//                        ((TextView) contentView.findViewById(R.id.diary_content_value)).setText("200");
-//                        ((TextView) contentView.findViewById(R.id.diary_content_amount)).setText("1 pound");
-//                        content.addView(contentView);
-//                    }
-//                    break;
-//                case 3:
-//                    title.setText(R.string.diary_food_snacks);
-//                    value.setText("50");
-//                    for (int j = 0; j < 4; j++){
-//                        View contentView = getLayoutInflater().inflate(R.layout.diary_content, null);
-//                        ((TextView) contentView.findViewById(R.id.diary_content_title)).setText("Fried Chicken");
-//                        ((TextView) contentView.findViewById(R.id.diary_content_value)).setText("200");
-//                        ((TextView) contentView.findViewById(R.id.diary_content_amount)).setText("1 pound");
-//                        content.addView(contentView);
-//                    }
-//            }
-//            linearLayout.addView(smallView);
-//        }
-//        View buttonView = getLayoutInflater().inflate(R.layout.diary_tag_button, null);
-//        ((TextView) buttonView.findViewById(R.id.diary_summary_button)).setText(R.string.diary_food_summary);
-//        linearLayout.addView(buttonView);
+        //inflate 4 meals
+        setMealView(linearLayout, R.string.diary_food_breakfast, R.string.diary_add_food, user.getBreakfastList());
+        setMealView(linearLayout, R.string.diary_food_lunch, R.string.diary_add_food, user.getLunchList());
+        setMealView(linearLayout, R.string.diary_food_dinner, R.string.diary_add_food, user.getDinnerList());
+        setMealView(linearLayout, R.string.diary_food_snacks, R.string.diary_add_food, user.getSnackList());
 
         return view;
+    }
+
+    private void setMealView(LinearLayout linearLayout, int diary_food_, int diary_add_food, List<Food> mealList) {
+        View mealView = getLayoutInflater().inflate(R.layout.diary_tag, null);
+        ((TextView) mealView.findViewById(R.id.diary_tag_title)).setText(getString(diary_food_));
+        ((TextView) mealView.findViewById(R.id.diary_add_button)).setText(getString(diary_add_food));
+        LinearLayout contentView = mealView.findViewById(R.id.diary_tag_content);
+        for (Food food : mealList) {
+            setContentView(food, contentView);
+        }
+        linearLayout.addView(mealView);
+    }
+
+    private void setContentView(Food food, LinearLayout contentView) {
+        View contentItem = getLayoutInflater().inflate(R.layout.diary_content, null);
+        ((TextView) contentItem.findViewById(R.id.diary_content_title)).setText(food.getFoodTitle());
+        ((TextView) contentItem.findViewById(R.id.diary_content_value)).setText(Integer.toString(food.getCaloryPerUnit() * food.getUnitNumber()));
+        ((TextView) contentItem.findViewById(R.id.diary_content_amount)).setText(Integer.toString(food.getUnitNumber()) + food.getUnitName());
+        contentView.addView(contentItem);
     }
 
     @Override

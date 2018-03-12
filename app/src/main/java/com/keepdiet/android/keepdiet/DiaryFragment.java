@@ -13,6 +13,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.keepdiet.android.keepdiet.userData.User;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -49,18 +51,15 @@ public class DiaryFragment extends Fragment {
         exerciseView = new DiaryExerciseFragment();
         indexView = new DiaryIndexFragment();
         //set data of the target only
-        setData(view);
+        setTargetData(view);
     }
 
-    private void setData(View view) {
-        int target = 2000;
-        ((TextView) view.findViewById(R.id.diary_target_number)).setText(String.format("%,d",target));
-        int food = 800;
-        ((TextView) view.findViewById(R.id.diary_food_number)).setText(String.format("%,d", food));
-        int exercise = 500;
-        ((TextView) view.findViewById(R.id.diary_exercise_number)).setText(String.format("%,d", exercise));
-        int remain = target - food + exercise;
-        ((TextView) view.findViewById(R.id.diary_remain_number)).setText(String.format("%,d", remain));
+    private void setTargetData(View view) {
+        User user = ((MainActivity) getActivity()).getUser();
+        ((TextView) view.findViewById(R.id.diary_target_number)).setText(String.format("%,d",user.getCaloryGoal()));
+        ((TextView) view.findViewById(R.id.diary_food_number)).setText(String.format("%,d", user.getCaloryConsumed()));
+        ((TextView) view.findViewById(R.id.diary_exercise_number)).setText(String.format("%,d", user.getCaloryBurned()));
+        ((TextView) view.findViewById(R.id.diary_remain_number)).setText(String.format("%,d", user.getCaloryRemaining()));
     }
 
     private class DiaryPagerAdapter extends FragmentPagerAdapter {

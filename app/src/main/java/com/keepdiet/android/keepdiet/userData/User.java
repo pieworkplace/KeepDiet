@@ -1,5 +1,6 @@
 package com.keepdiet.android.keepdiet.userData;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -19,15 +20,72 @@ public class User {
     private List<Food> dinnerList;
     private List<Food> snackList;
 
-    public User(){
+    public int getCaloryGoal() {
+        return caloryGoal;
+    }
+
+    public void setCaloryGoal(int caloryGoal) {
+        this.caloryGoal = caloryGoal;
+    }
+
+    public int getCaloryConsumed() {
+        return caloryConsumed;
+    }
+
+    public void setCaloryConsumed(int caloryConsumed) {
+        this.caloryConsumed = caloryConsumed;
+    }
+
+    public int getCaloryBurned() {
+        return caloryBurned;
+    }
+
+    public void setCaloryBurned(int caloryBurned) {
+        this.caloryBurned = caloryBurned;
+    }
+
+    public int getCaloryRemaining() {
+        return caloryRemaining;
+    }
+
+    public void setCaloryRemaining(int caloryRemaining) {
+        this.caloryRemaining = caloryRemaining;
+    }
+
+    public List<Food> getBreakfastList() {
+        return breakfastList;
+    }
+
+
+    public List<Food> getLunchList() {
+        return lunchList;
+    }
+
+
+    public List<Food> getDinnerList() {
+        return dinnerList;
+    }
+
+
+    public List<Food> getSnackList() {
+        return snackList;
+    }
+
+
+    public User() {
         //TODO change fake data
         caloryGoal = 2000;
         caloryBurned = 0;
         caloryConsumed = 0;
         caloryRemaining = caloryGoal - caloryConsumed + caloryBurned;
-        breakfastList = null;
-        lunchList = null;
-        dinnerList = null;
-        snackList = null;
+
+        breakfastList = new ArrayList<Food>();
+        lunchList = new ArrayList<Food>();
+        dinnerList = new ArrayList<Food>();
+        snackList = new ArrayList<Food>();
+
+        breakfastList.add(new Food("Fried Chicken", 200, 1, "pound"));
+        breakfastList.add(new Food("Fried Chicken", 200, 1, "pound"));
+        dinnerList.add(new Food("Fried Chicken", 200, 1, "pound"));
     }
 }

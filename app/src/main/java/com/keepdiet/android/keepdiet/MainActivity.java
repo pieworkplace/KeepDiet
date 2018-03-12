@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.keepdiet.android.keepdiet.userData.User;
 import com.keepdiet.android.keepdiet.utils.BottomNavigationViewHelper;
 
 public class MainActivity extends AppCompatActivity {
@@ -16,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     public static final String FEED = "feed";
     public static final String GROUP = "group";
     public static final String MORE = "more";
+    public User user = new User();
 
     //disable back button
     @Override
@@ -30,8 +32,11 @@ public class MainActivity extends AppCompatActivity {
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation_bar);
         BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
 
+
+        //add fragments
         addFragments();
 
+        //set bottom bar listener
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {

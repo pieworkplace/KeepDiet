@@ -32,7 +32,7 @@ public class MoreFragment extends Fragment {
         view.findViewById(R.id.startGroup).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getActivity(), startGroup.class));
+                startActivity(new Intent(getActivity(), StartGroup.class));
             }
         });
         view.findViewById(R.id.findGroup).setOnClickListener(new View.OnClickListener() {

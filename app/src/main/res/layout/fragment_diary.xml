@@ -88,8 +88,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/diary_target_table"
         app:tabMode="fixed"
-        app:tabGravity="fill"
-        android:layout_marginBottom="@dimen/diary_tag_large_padding">
+        app:tabGravity="fill">
 
     </android.support.design.widget.TabLayout>
 

@@ -8,25 +8,28 @@
     <FrameLayout
         android:id="@+id/diary_fragment_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@id/bottom_navigation_bar"/>
+        android:layout_height="wrap_content"/>
 
     <FrameLayout
         android:id="@+id/feed_fragment_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@id/bottom_navigation_bar"/>
+        android:layout_height="wrap_content"/>
 
     <FrameLayout
         android:id="@+id/group_fragment_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@id/bottom_navigation_bar"/>
+        android:layout_height="wrap_content"/>
 
     <FrameLayout
         android:id="@+id/more_fragment_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_below="@id/diary_content_amount"
+        android:layout_height="1dp"
+        android:background="@color/whitesmoke"
         android:layout_above="@id/bottom_navigation_bar"/>
 
     <android.support.design.widget.BottomNavigationView

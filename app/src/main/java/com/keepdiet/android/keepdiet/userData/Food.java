@@ -1,16 +1,18 @@
 package com.keepdiet.android.keepdiet.userData;
 
+import java.io.Serializable;
+
 /**
  * Created by Liu Junlin on 2018/3/12.
  */
 
-public class Food {
+public class Food implements Serializable{
     private String foodTitle;
     private int caloryPerUnit;
-    private int unitNumber;
+    private double unitNumber;
     private String unitName;
 
-    public Food(String foodTitle, int caloryPerUnit, int unitNumber, String unitName) {
+    public Food(String foodTitle, int caloryPerUnit, double unitNumber, String unitName) {
         this.foodTitle = foodTitle;
         this.caloryPerUnit = caloryPerUnit;
         this.unitNumber = unitNumber;
@@ -33,11 +35,11 @@ public class Food {
         this.caloryPerUnit = caloryPerUnit;
     }
 
-    public int getUnitNumber() {
+    public double getUnitNumber() {
         return unitNumber;
     }
 
-    public void setUnitNumber(int unitNumber) {
+    public void setUnitNumber(double unitNumber) {
         this.unitNumber = unitNumber;
     }
 
@@ -47,5 +49,9 @@ public class Food {
 
     public void setUnitName(String unitName) {
         this.unitName = unitName;
+    }
+
+    public int getTotalCalory(){
+        return ((int) (caloryPerUnit * unitNumber));
     }
 }

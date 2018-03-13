@@ -43,4 +43,13 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
+    <string name="add_food_title_example">e.g., bananas</string>
+    <string name="diary_content_title">Food Name</string>
+    <string name="diary_content_unit_name">Unit</string>
+    <string name="add_food_unit_name_example">e.g., pound</string>
+    <string name="add_food_amount_example">e.g., 2.5</string>
+    <string name="add_done">Done</string>
+    <string name="add_food_calory_per_unit_example">e.g., 200</string>
+    <string name="diary_content_amount">Amount</string>
+    <string name="diary_content_calory_per_unit">Calory Per Unit</string>
 </resources>

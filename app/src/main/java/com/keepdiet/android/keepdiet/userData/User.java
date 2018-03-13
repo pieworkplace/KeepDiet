@@ -1,5 +1,6 @@
 package com.keepdiet.android.keepdiet.userData;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,7 +8,7 @@ import java.util.List;
  * Created by Liu Junlin on 2018/3/12.
  */
 
-public class User {
+public class User implements Serializable{
     //diary related
     //overall
     private int caloryGoal;
@@ -66,9 +67,32 @@ public class User {
         return dinnerList;
     }
 
-
     public List<Food> getSnackList() {
         return snackList;
+    }
+
+    public void addBreakfastList(Food food){
+        breakfastList.add(food);
+        caloryConsumed += food.getTotalCalory();
+        caloryRemaining -= food.getTotalCalory();
+    }
+
+    public void addLunchList(Food food){
+        lunchList.add(food);
+        caloryConsumed += food.getTotalCalory();
+        caloryRemaining -= food.getTotalCalory();
+    }
+
+    public void addDinnerList(Food food){
+        dinnerList.add(food);
+        caloryConsumed += food.getTotalCalory();
+        caloryRemaining -= food.getTotalCalory();
+    }
+
+    public void addSnackList(Food food){
+        snackList.add(food);
+        caloryConsumed += food.getTotalCalory();
+        caloryRemaining -= food.getTotalCalory();
     }
 
 
@@ -83,9 +107,9 @@ public class User {
         lunchList = new ArrayList<Food>();
         dinnerList = new ArrayList<Food>();
         snackList = new ArrayList<Food>();
-
-        breakfastList.add(new Food("Fried Chicken", 200, 1, "pound"));
-        breakfastList.add(new Food("Fried Chicken", 200, 1, "pound"));
-        dinnerList.add(new Food("Fried Chicken", 200, 1, "pound"));
+//
+//        breakfastList.add(new Food("Fried Chicken", 200, 1, "pound"));
+//        breakfastList.add(new Food("Fried Chicken", 200, 1, "pound"));
+//        dinnerList.add(new Food("Fried Chicken", 200, 1, "pound"));
     }
 }

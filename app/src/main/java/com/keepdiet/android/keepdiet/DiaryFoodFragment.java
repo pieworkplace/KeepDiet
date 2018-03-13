@@ -59,7 +59,8 @@ public class DiaryFoodFragment extends Fragment {
     }
 
     private void setMealView(LinearLayout linearLayout, final int diary_food_, int diary_add_food, List<Food> mealList) {
-        View mealView = getLayoutInflater().inflate(R.layout.diary_tag, null);
+        final User user = ((MainActivity) getActivity()).getUser();
+        final View mealView = getLayoutInflater().inflate(R.layout.diary_tag, null);
         ((TextView) mealView.findViewById(R.id.diary_tag_title)).setText(getString(diary_food_));
         TextView addButton = ((TextView) mealView.findViewById(R.id.diary_add_button));
         addButton.setText(getString(diary_add_food));
@@ -70,15 +71,19 @@ public class DiaryFoodFragment extends Fragment {
                 switch (diary_food_){
                     case R.string.diary_food_breakfast:
                         requestCode = REQUEST_ADD_BREAKFAST;
+                        ((TextView) mealView.findViewById(R.id.diary_tag_value)).setText(Integer.toString(user.getBreakfastTotalCalory()));
                         break;
                     case R.string.diary_food_lunch:
                         requestCode = REQUEST_ADD_LUNCH;
+                        ((TextView) mealView.findViewById(R.id.diary_tag_value)).setText(Integer.toString(user.getLunchTotalCalory()));
                         break;
                     case R.string.diary_food_dinner:
                         requestCode = REQUEST_ADD_DINNER;
+                        ((TextView) mealView.findViewById(R.id.diary_tag_value)).setText(Integer.toString(user.getDinnerTotalCalory()));
                         break;
                     case R.string.diary_food_snacks:
                         requestCode = REQUEST_ADD_SNACKS;
+                        ((TextView) mealView.findViewById(R.id.diary_tag_value)).setText(Integer.toString(user.getSnackTotalCalory()));
                 }
                 startActivityForResult(new Intent(getActivity(), AddFoodActivity.class), requestCode);
             }
@@ -88,14 +93,27 @@ public class DiaryFoodFragment extends Fragment {
         for (Food food : mealList) {
             setContentView(food, contentView);
         }
+        switch (diary_food_){
+            case R.string.diary_food_breakfast:
+                ((TextView) mealView.findViewById(R.id.diary_tag_value)).setText(Integer.toString(user.getBreakfastTotalCalory()));
+                break;
+            case R.string.diary_food_lunch:
+                ((TextView) mealView.findViewById(R.id.diary_tag_value)).setText(Integer.toString(user.getLunchTotalCalory()));
+                break;
+            case R.string.diary_food_dinner:
+                ((TextView) mealView.findViewById(R.id.diary_tag_value)).setText(Integer.toString(user.getDinnerTotalCalory()));
+                break;
+            case R.string.diary_food_snacks:
+                ((TextView) mealView.findViewById(R.id.diary_tag_value)).setText(Integer.toString(user.getSnackTotalCalory()));
+        }
         linearLayout.addView(mealView);
     }
 
     private void setContentView(Food food, LinearLayout contentView) {
         View contentItem = getLayoutInflater().inflate(R.layout.diary_content, null);
         ((TextView) contentItem.findViewById(R.id.diary_content_title)).setText(food.getFoodTitle());
-        ((TextView) contentItem.findViewById(R.id.diary_content_value)).setText(Double.toString(food.getCaloryPerUnit() * food.getUnitNumber()));
-        ((TextView) contentItem.findViewById(R.id.diary_content_amount)).setText(Double.toString(food.getUnitNumber()) + food.getUnitName());
+        ((TextView) contentItem.findViewById(R.id.diary_content_value)).setText(Integer.toString(food.getTotalCalory()));
+        ((TextView) contentItem.findViewById(R.id.diary_content_amount)).setText(Double.toString(food.getUnitNumber()) + " " + food.getUnitName());
         contentView.addView(contentItem);
     }
 

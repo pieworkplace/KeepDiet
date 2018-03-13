@@ -16,7 +16,7 @@ public class AddFoodActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_food);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_add_food);
+        Toolbar toolbar = findViewById(R.id.toolbar_add_food);
         toolbar.inflateMenu(R.menu.add_food_menu);
         toolbar.setTitle("");
         toolbar.setNavigationIcon(R.drawable.ic_arrow_back_black_24dp);

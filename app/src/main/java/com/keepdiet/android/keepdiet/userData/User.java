@@ -1,5 +1,7 @@
 package com.keepdiet.android.keepdiet.userData;
 
+import android.app.Fragment;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -94,6 +96,39 @@ public class User implements Serializable{
         caloryConsumed += food.getTotalCalory();
         caloryRemaining -= food.getTotalCalory();
     }
+
+    public int getBreakfastTotalCalory(){
+        int sum = 0;
+        for (Food food : breakfastList){
+            sum += food.getTotalCalory();
+        }
+        return sum;
+    }
+
+    public int getLunchTotalCalory(){
+        int sum = 0;
+        for (Food food : lunchList){
+            sum += food.getTotalCalory();
+        }
+        return sum;
+    }
+
+    public int getDinnerTotalCalory(){
+        int sum = 0;
+        for (Food food : dinnerList){
+            sum += food.getTotalCalory();
+        }
+        return sum;
+    }
+
+    public int getSnackTotalCalory(){
+        int sum = 0;
+        for (Food food : snackList){
+            sum += food.getTotalCalory();
+        }
+        return sum;
+    }
+
 
 
     public User() {

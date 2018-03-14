@@ -23,12 +23,13 @@
             </intent-filter>
         </activity>
         <activity android:name=".UserTargetActivity" />
-        <activity android:name=".StartGroup" />
+        <activity android:name=".StartGroupActivity" />
         <activity android:name=".SetTarget" />
-        <activity android:name=".FindGroup" />
+        <activity android:name=".FindGroupActivity" />
         <activity android:name=".FindGroupResult" />
         <activity android:name=".GroupInformation" />
-        <activity android:name=".AddFoodActivity"></activity>
+        <activity android:name=".AddFoodActivity" />
+        <activity android:name=".AddExerciseActivity"></activity>
     </application>
 
 </manifest>

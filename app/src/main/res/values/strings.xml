@@ -52,4 +52,14 @@
     <string name="add_food_calory_per_unit_example">e.g., 200</string>
     <string name="diary_content_amount">Amount</string>
     <string name="diary_content_calory_per_unit">Calory Per Unit</string>
+    <string name="diary_exercise">Exercise</string>
+    <string name="diary_add_exercise">Add Exercise</string>
+    <string name="add_exercise_title_example">e.g., Running</string>
+    <string name="diary_add_exercise_title">Exercise Name</string>
+    <string name="add_exercise_unit_name_example">e.g., hour</string>
+    <string name="more_food_energy">Check Food Energy</string>
+    <string name="more_exercise_energy">Check Exercise Energy</string>
+    <string name="more_find_group">Find Group</string>
+    <string name="more_start_group">Start Group</string>
+    <string name="more_settings">Settings</string>
 </resources>

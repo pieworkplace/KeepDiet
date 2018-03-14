@@ -10,7 +10,11 @@ import java.util.List;
  * Created by Liu Junlin on 2018/3/12.
  */
 
-public class User implements Serializable{
+public class User implements Serializable {
+    //identity related
+    private int ID;
+    private String username;
+
     //diary related
     //overall
     private int caloryGoal;
@@ -22,6 +26,11 @@ public class User implements Serializable{
     private List<Food> lunchList;
     private List<Food> dinnerList;
     private List<Food> snackList;
+    //exercise
+    private List<Exercise> exerciseList;
+
+    //group related
+
 
     public int getCaloryGoal() {
         return caloryGoal;
@@ -55,15 +64,17 @@ public class User implements Serializable{
         this.caloryRemaining = caloryRemaining;
     }
 
+    public String getUsername() {
+        return username;
+    }
+
     public List<Food> getBreakfastList() {
         return breakfastList;
     }
 
-
     public List<Food> getLunchList() {
         return lunchList;
     }
-
 
     public List<Food> getDinnerList() {
         return dinnerList;
@@ -73,62 +84,79 @@ public class User implements Serializable{
         return snackList;
     }
 
-    public void addBreakfastList(Food food){
+    public List<Exercise> getExerciseList() {
+        return exerciseList;
+    }
+
+    public void addBreakfastList(Food food) {
         breakfastList.add(food);
         caloryConsumed += food.getTotalCalory();
         caloryRemaining -= food.getTotalCalory();
     }
 
-    public void addLunchList(Food food){
+    public void addLunchList(Food food) {
         lunchList.add(food);
         caloryConsumed += food.getTotalCalory();
         caloryRemaining -= food.getTotalCalory();
     }
 
-    public void addDinnerList(Food food){
+    public void addDinnerList(Food food) {
         dinnerList.add(food);
         caloryConsumed += food.getTotalCalory();
         caloryRemaining -= food.getTotalCalory();
     }
 
-    public void addSnackList(Food food){
+    public void addSnackList(Food food) {
         snackList.add(food);
         caloryConsumed += food.getTotalCalory();
         caloryRemaining -= food.getTotalCalory();
     }
 
-    public int getBreakfastTotalCalory(){
+    public void addExerciseList(Exercise exercise){
+        exerciseList.add(exercise);
+        caloryBurned += exercise.getCaloryBurned();
+        caloryRemaining += exercise.getCaloryBurned();
+    }
+
+    public int getBreakfastTotalCalory() {
         int sum = 0;
-        for (Food food : breakfastList){
+        for (Food food : breakfastList) {
             sum += food.getTotalCalory();
         }
         return sum;
     }
 
-    public int getLunchTotalCalory(){
+    public int getLunchTotalCalory() {
         int sum = 0;
-        for (Food food : lunchList){
+        for (Food food : lunchList) {
             sum += food.getTotalCalory();
         }
         return sum;
     }
 
-    public int getDinnerTotalCalory(){
+    public int getDinnerTotalCalory() {
         int sum = 0;
-        for (Food food : dinnerList){
+        for (Food food : dinnerList) {
             sum += food.getTotalCalory();
         }
         return sum;
     }
 
-    public int getSnackTotalCalory(){
+    public int getSnackTotalCalory() {
         int sum = 0;
-        for (Food food : snackList){
+        for (Food food : snackList) {
             sum += food.getTotalCalory();
         }
         return sum;
     }
 
+    public int getExerciseTotalCalory(){
+        int sum = 0;
+        for (Exercise exercise : exerciseList){
+            sum += exercise.getCaloryBurned();
+        }
+        return sum;
+    }
 
 
     public User() {
@@ -137,14 +165,18 @@ public class User implements Serializable{
         caloryBurned = 0;
         caloryConsumed = 0;
         caloryRemaining = caloryGoal - caloryConsumed + caloryBurned;
+        username = "Haoting Li";
 
         breakfastList = new ArrayList<Food>();
         lunchList = new ArrayList<Food>();
         dinnerList = new ArrayList<Food>();
         snackList = new ArrayList<Food>();
-//
-//        breakfastList.add(new Food("Fried Chicken", 200, 1, "pound"));
-//        breakfastList.add(new Food("Fried Chicken", 200, 1, "pound"));
-//        dinnerList.add(new Food("Fried Chicken", 200, 1, "pound"));
+
+        exerciseList = new ArrayList<Exercise>();
+
+        addDinnerList(new Food("Fried Chicken", 200, 1, "pound"));
+        addDinnerList(new Food("Fried Chicken", 200, 1, "pound"));
+        addBreakfastList(new Food("Fried Chicken", 200, 1, "pound"));
+
     }
 }

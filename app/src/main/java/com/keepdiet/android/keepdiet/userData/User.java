@@ -13,6 +13,7 @@ import java.util.List;
 public class User implements Serializable {
     //identity related
     private int ID;
+    private String username;
 
     //diary related
     //overall
@@ -61,6 +62,10 @@ public class User implements Serializable {
 
     public void setCaloryRemaining(int caloryRemaining) {
         this.caloryRemaining = caloryRemaining;
+    }
+
+    public String getUsername() {
+        return username;
     }
 
     public List<Food> getBreakfastList() {
@@ -160,6 +165,7 @@ public class User implements Serializable {
         caloryBurned = 0;
         caloryConsumed = 0;
         caloryRemaining = caloryGoal - caloryConsumed + caloryBurned;
+        username = "Haoting Li";
 
         breakfastList = new ArrayList<Food>();
         lunchList = new ArrayList<Food>();

@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-public class StartGroup extends Activity {
+public class StartGroupActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -14,7 +14,7 @@ public class StartGroup extends Activity {
         findViewById(R.id.startGroupButton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(StartGroup.this, SetTarget.class
+                startActivity(new Intent(StartGroupActivity.this, SetTarget.class
                 ));
             }
         });

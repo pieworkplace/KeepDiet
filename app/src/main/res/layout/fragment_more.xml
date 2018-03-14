@@ -21,88 +21,103 @@
             android:textSize="@dimen/toolbar_textsize"/>
     </android.support.v7.widget.Toolbar>
 
-
-
-    <!-- TODO: Update blank fragment layout -->
-
-
     <TextView
-        android:id="@+id/account"
+        android:id="@+id/more_account"
         android:layout_width="match_parent"
-        android:layout_height="94dp"
-        android:textSize="32sp"
-        android:gravity=""
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
         android:drawableLeft="@drawable/ic_account_circle_black_48dp"
-        android:drawablePadding="0dp"
-        android:layout_marginTop="5dp"
-        android:paddingLeft="8dp"
-        android:background="@drawable/txt_radiuborder"
-        android:text="  Haoting Li" />
+        android:drawableTint="@color/colorPrimaryDark"
+        android:drawablePadding="@dimen/diary_tag_large_padding"
+        android:padding="@dimen/diary_tag_large_padding"
+        style="@style/TextAppearance.AppCompat.Headline"
+        tools:text="Haoting Li" />
 
-    <TextView
-    android:id="@+id/foodEnergy"
-    android:layout_width="match_parent"
-    android:layout_height="64dp"
-    android:textSize="22sp"
-    android:gravity=""
-    android:drawableLeft="@drawable/ic_restaurant_black_36dp"
-    android:drawablePadding="0dp"
-    android:layout_marginTop="5dp"
-    android:paddingLeft="8dp"
-    android:background="@drawable/txt_rectborder"
-    android:text="  Food Energy" />
-
-    <TextView
-        android:id="@+id/exerciseEnergy"
+    <View
         android:layout_width="match_parent"
-        android:layout_height="64dp"
-        android:textSize="22sp"
-        android:gravity=""
-        android:drawableLeft="@drawable/ic_fitness_center_black_36dp"
-        android:drawablePadding="0dp"
-        android:layout_marginTop="0dp"
-        android:paddingLeft="8dp"
-        android:background="@drawable/txt_rectborder"
-        android:text="  Exercise Energy" />
+        android:layout_height="5dp"
+        android:background="@color/whitesmoke" />
 
     <TextView
-        android:id="@+id/findGroup"
+        android:id="@+id/more_food_energy"
         android:layout_width="match_parent"
-        android:layout_height="64dp"
-        android:textSize="22sp"
-        android:gravity=""
-        android:drawableLeft="@drawable/ic_people_black_36dp"
-        android:drawablePadding="0dp"
-        android:layout_marginTop="0dp"
-        android:paddingLeft="8dp"
-        android:background="@drawable/txt_rectborder"
-        android:text="  Find Group" />
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:textSize="@dimen/toolbar_title_textsize"
+        android:drawableLeft="@drawable/ic_restaurant_black_24dp"
+        android:drawablePadding="@dimen/diary_tag_large_padding"
+        android:padding="@dimen/diary_tag_large_padding"
+        android:drawableTint="@color/colorPrimaryDark"
+        android:text="@string/more_food_energy" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/whitesmoke" />
 
     <TextView
-        android:id="@+id/startGroup"
+        android:id="@+id/more_exercise_energy"
         android:layout_width="match_parent"
-        android:layout_height="64dp"
-        android:textSize="22sp"
-        android:gravity=""
-        android:drawableLeft="@drawable/ic_exposure_plus_1_black_36dp"
-        android:drawablePadding="0dp"
-        android:layout_marginTop="0dp"
-        android:paddingLeft="8dp"
-        android:background="@drawable/txt_rectborder"
-        android:text="  Start Group" />
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:drawableLeft="@drawable/ic_fitness_center_black_24dp"
+        android:drawablePadding="@dimen/diary_tag_large_padding"
+        android:padding="@dimen/diary_tag_large_padding"
+        android:drawableTint="@color/colorPrimaryDark"
+        android:textSize="@dimen/toolbar_title_textsize"
+        android:text="@string/more_exercise_energy" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/whitesmoke" />
 
     <TextView
-        android:id="@+id/settings"
+        android:id="@+id/more_find_group"
         android:layout_width="match_parent"
-        android:layout_height="64dp"
-        android:textSize="22sp"
-        android:gravity=""
-        android:drawableLeft="@drawable/ic_settings_black_36dp"
-        android:drawablePadding="0dp"
-        android:layout_marginTop="0dp"
-        android:paddingLeft="8dp"
-        android:background="@drawable/txt_rectborder"
-        android:text="  Settings" />
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:textSize="@dimen/toolbar_title_textsize"
+        android:drawableLeft="@drawable/ic_group_black_24dp"
+        android:drawablePadding="@dimen/diary_tag_large_padding"
+        android:padding="@dimen/diary_tag_large_padding"
+        android:drawableTint="@color/colorPrimaryDark"
+        android:text="@string/more_find_group" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/whitesmoke" />
+
+    <TextView
+        android:id="@+id/more_start_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:textSize="@dimen/toolbar_title_textsize"
+        android:drawableLeft="@drawable/ic_group_add_black_24dp"
+        android:drawablePadding="@dimen/diary_tag_large_padding"
+        android:padding="@dimen/diary_tag_large_padding"
+        android:drawableTint="@color/colorPrimaryDark"
+        android:text="@string/more_start_group" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/whitesmoke" />
+
+    <TextView
+        android:id="@+id/more_settings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:textSize="@dimen/toolbar_title_textsize"
+        android:drawableLeft="@drawable/ic_settings_black_24dp"
+        android:drawablePadding="@dimen/diary_tag_large_padding"
+        android:padding="@dimen/diary_tag_large_padding"
+        android:drawableTint="@color/colorPrimaryDark"
+        android:text="@string/more_settings" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/whitesmoke" />
+
 
 
 </LinearLayout>

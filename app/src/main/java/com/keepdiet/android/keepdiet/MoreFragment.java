@@ -8,6 +8,9 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+
+import com.keepdiet.android.keepdiet.userData.User;
 
 
 /**
@@ -25,20 +28,23 @@ public class MoreFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_more, container, false);
+        User user = ((MainActivity) getActivity()).getUser();
+        View view = inflater.inflate(R.layout.fragment_more, container, false);
+        ((TextView) view.findViewById(R.id.more_account)).setText(user.getUsername());
+        return view;
     }
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        view.findViewById(R.id.startGroup).setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.more_start_group).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getActivity(), StartGroup.class));
+                startActivity(new Intent(getActivity(), StartGroupActivity.class));
             }
         });
-        view.findViewById(R.id.findGroup).setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.more_find_group).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getActivity(), FindGroup.class));
+                startActivity(new Intent(getActivity(), FindGroupActivity.class));
             }
         });
     }

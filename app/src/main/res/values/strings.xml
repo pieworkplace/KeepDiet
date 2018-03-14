@@ -57,4 +57,9 @@
     <string name="add_exercise_title_example">e.g., Running</string>
     <string name="diary_add_exercise_title">Exercise Name</string>
     <string name="add_exercise_unit_name_example">e.g., hour</string>
+    <string name="more_food_energy">Check Food Energy</string>
+    <string name="more_exercise_energy">Check Exercise Energy</string>
+    <string name="more_find_group">Find Group</string>
+    <string name="more_start_group">Start Group</string>
+    <string name="more_settings">Settings</string>
 </resources>

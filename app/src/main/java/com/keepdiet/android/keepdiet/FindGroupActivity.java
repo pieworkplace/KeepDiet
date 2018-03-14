@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-public class FindGroup extends Activity {
+public class FindGroupActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -14,7 +14,7 @@ public class FindGroup extends Activity {
         findViewById(R.id.go).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(FindGroup.this, FindGroupResult.class
+                startActivity(new Intent(FindGroupActivity.this, FindGroupResult.class
                 ));
             }
         });

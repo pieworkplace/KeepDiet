@@ -1,0 +1,51 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#FFFFFF"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_search_food"
+        android:background="@color/colorPrimary"
+        android:theme="@style/Base.ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingRight="@dimen/diary_tag_small_padding">
+            <EditText
+                android:id="@+id/diary_content_title_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:drawableLeft="@drawable/ic_search_white_24dp"
+                android:drawablePadding="@dimen/diary_tag_small_padding"
+                android:hint="@string/add_food_title_example"
+                android:background="@drawable/rounded_corner_background"
+                android:padding="@dimen/diary_tag_small_padding"
+                android:paddingRight="@dimen/diary_tag_large_padding"/>
+            <ImageView
+                android:id="@+id/search_food_edit_clear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|center_vertical"
+                android:background="@drawable/ic_clear_white_24dp" />
+        </FrameLayout>
+
+    </android.support.v7.widget.Toolbar>
+
+    <TextView
+        android:id="@+id/diary_content_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/diary_content_title"
+        style="@style/TextAppearance.AppCompat.Menu"
+        android:paddingLeft="@dimen/diary_tag_large_padding"
+        android:paddingTop="@dimen/diary_tag_small_padding"/>
+
+
+</LinearLayout>

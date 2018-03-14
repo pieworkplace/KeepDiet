@@ -29,7 +29,8 @@
         <activity android:name=".FindGroupResult" />
         <activity android:name=".GroupInformation" />
         <activity android:name=".AddFoodActivity" />
-        <activity android:name=".AddExerciseActivity"></activity>
+        <activity android:name=".AddExerciseActivity" />
+        <activity android:name=".SearchFoodActivity"></activity>
     </application>
 
 </manifest>

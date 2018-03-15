@@ -52,7 +52,7 @@
     <string name="add_food_calory_per_unit_example">e.g., 200</string>
     <string name="diary_content_amount">Amount*</string>
     <string name="diary_content_calory_per_unit">Calories Per Unit*</string>
-    <string name="diary_exercise">Exercise*</string>
+    <string name="diary_exercise">Exercise</string>
     <string name="diary_create_exercise">Create Exercise</string>
     <string name="add_exercise_title_example">e.g., Running</string>
     <string name="diary_add_exercise_title">Exercise Name*</string>
@@ -66,4 +66,5 @@
     <string name="general_alert">Alert</string>
     <string name="required_item_empty_error">Required items cannot be empty.</string>
     <string name="dismiss">Dismiss</string>
+    <string name="no_result_error">No Results Found</string>
 </resources>

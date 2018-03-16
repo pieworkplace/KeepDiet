@@ -67,4 +67,5 @@
     <string name="required_item_empty_error">Required items cannot be empty.</string>
     <string name="dismiss">Dismiss</string>
     <string name="no_result_error">No Results Found</string>
+    <string name="internet_connection_error">Internet connection error. Please try again.</string>
 </resources>

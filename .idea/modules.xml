@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/KeepDiet.iml" filepath="$PROJECT_DIR$/KeepDiet.iml" />
+      <module fileurl="file://C:\Users\Haoting\Desktop\CS 8803\project\KeepDiet\KeepDiet.iml" filepath="C:\Users\Haoting\Desktop\CS 8803\project\KeepDiet\KeepDiet.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://C:\Users\Haoting\Desktop\CS 8803\project\KeepDiet\app\app.iml" filepath="C:\Users\Haoting\Desktop\CS 8803\project\KeepDiet\app\app.iml" />
     </modules>
   </component>
 </project>

@@ -7,14 +7,14 @@
 
     <TextView
         android:id="@+id/diary_summary_button"
-        style="@style/TextAppearance.AppCompat.Inverse"
+        android:textColor="@color/colorPrimaryDark"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/diary_tag_large_padding"
-        android:background="@drawable/rounded_corner_background"
+        android:background="@drawable/rounded_corner_background_border"
         android:paddingBottom="@dimen/diary_tag_small_padding"
         android:paddingEnd="@dimen/diary_tag_large_padding"
         android:paddingStart="@dimen/diary_tag_large_padding"
         android:paddingTop="@dimen/diary_tag_small_padding"
-        tools:text="@string/diary_food_summary" />
+        tools:text="@string/diary_create_food" />
 </LinearLayout>

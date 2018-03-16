@@ -57,7 +57,7 @@ public class DiaryFragment extends Fragment {
         setItemView(linearLayout, R.string.diary_food_snacks, R.string.diary_add_food, user.getSnackList());
 
         //draw exercise
-        setItemView(linearLayout, R.string.diary_exercise, R.string.diary_add_exercise, user.getExerciseList());
+        setItemView(linearLayout, R.string.diary_exercise, R.string.diary_create_exercise, user.getExerciseList());
 
         //draw index
         return view;
@@ -91,22 +91,22 @@ public class DiaryFragment extends Fragment {
                     case R.string.diary_food_breakfast:
                         requestCode = REQUEST_ADD_BREAKFAST;
                         ((TextView) itemView.findViewById(R.id.diary_tag_value)).setText(Integer.toString(user.getBreakfastTotalCalory()));
-                        startActivityForResult(new Intent(getActivity(), AddFoodActivity.class), requestCode);
+                        startActivityForResult(new Intent(getActivity(), SearchFoodActivity.class), requestCode);
                         break;
                     case R.string.diary_food_lunch:
                         requestCode = REQUEST_ADD_LUNCH;
                         ((TextView) itemView.findViewById(R.id.diary_tag_value)).setText(Integer.toString(user.getLunchTotalCalory()));
-                        startActivityForResult(new Intent(getActivity(), AddFoodActivity.class), requestCode);
+                        startActivityForResult(new Intent(getActivity(), SearchFoodActivity.class), requestCode);
                         break;
                     case R.string.diary_food_dinner:
                         requestCode = REQUEST_ADD_DINNER;
                         ((TextView) itemView.findViewById(R.id.diary_tag_value)).setText(Integer.toString(user.getDinnerTotalCalory()));
-                        startActivityForResult(new Intent(getActivity(), AddFoodActivity.class), requestCode);
+                        startActivityForResult(new Intent(getActivity(), SearchFoodActivity.class), requestCode);
                         break;
                     case R.string.diary_food_snacks:
                         requestCode = REQUEST_ADD_SNACKS;
                         ((TextView) itemView.findViewById(R.id.diary_tag_value)).setText(Integer.toString(user.getSnackTotalCalory()));
-                        startActivityForResult(new Intent(getActivity(), AddFoodActivity.class), requestCode);
+                        startActivityForResult(new Intent(getActivity(), SearchFoodActivity.class), requestCode);
                         break;
                     case R.string.diary_exercise:
                         requestCode = REQUEST_ADD_EXERCISE;

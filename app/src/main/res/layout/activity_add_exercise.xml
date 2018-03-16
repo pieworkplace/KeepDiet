@@ -16,7 +16,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/diary_add_exercise"
+            android:text="@string/diary_create_exercise"
             android:textColor="@color/white"
             android:layout_gravity="center"
             android:textSize="@dimen/toolbar_textsize"/>
@@ -66,7 +66,8 @@
         android:layout_height="wrap_content"
         android:paddingLeft="@dimen/diary_tag_large_padding"
         android:maxLines="1"
-        android:hint="@string/add_food_amount_example" />
+        android:hint="@string/add_food_amount_example"
+        android:inputType="numberDecimal"/>
     <TextView
         android:id="@+id/diary_exercise_calory_per_unit"
         android:layout_width="match_parent"
@@ -82,7 +83,8 @@
         android:layout_height="wrap_content"
         android:hint="@string/add_food_calory_per_unit_example"
         android:maxLines="1"
-        android:paddingLeft="@dimen/diary_tag_large_padding" />
+        android:paddingLeft="@dimen/diary_tag_large_padding"
+        android:inputType="numberDecimal"/>
 
 
 </LinearLayout>

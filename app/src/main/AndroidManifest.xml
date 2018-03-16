@@ -6,6 +6,7 @@
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -29,7 +30,8 @@
         <activity android:name=".FindGroupResult" />
         <activity android:name=".GroupInformation" />
         <activity android:name=".AddFoodActivity" />
-        <activity android:name=".AddExerciseActivity"></activity>
+        <activity android:name=".AddExerciseActivity" />
+        <activity android:name=".SearchFoodActivity"></activity>
     </application>
 
 </manifest>

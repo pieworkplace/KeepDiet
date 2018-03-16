@@ -25,31 +25,12 @@
 
     </android.support.v7.widget.Toolbar>
 
-    <FrameLayout
+    <LinearLayout
         android:id="@+id/search_food_result_from_internet"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-    </FrameLayout>
-
-    <TextView
-        android:id="@+id/create_food_button"
-        android:textColor="@color/colorPrimaryDark"
-        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/diary_tag_large_padding"
-        android:layout_marginBottom="@dimen/diary_tag_large_padding"
-        android:background="@drawable/rounded_corner_background_border"
-        android:paddingBottom="@dimen/diary_tag_small_padding"
-        android:paddingEnd="@dimen/diary_tag_large_padding"
-        android:paddingStart="@dimen/diary_tag_large_padding"
-        android:paddingTop="@dimen/diary_tag_small_padding"
-        android:layout_marginLeft="@dimen/diary_tag_large_padding"
-        android:layout_marginRight="@dimen/diary_tag_large_padding"
-        android:textAlignment="center"
-        android:text="@string/diary_create_food"/>
+        android:orientation="vertical">
 
-
-
+    </LinearLayout>
 
 </LinearLayout>

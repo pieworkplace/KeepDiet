@@ -10,6 +10,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -48,7 +49,12 @@ public class SearchFoodActivity extends AppCompatActivity {
                 finish();
             }
         });
-        findViewById(R.id.create_food_button).setOnClickListener(new View.OnClickListener() {
+
+        LinearLayout linearLayout = findViewById(R.id.search_food_result_from_internet);
+        View createFoodButton = getLayoutInflater().inflate(R.layout.search_food_create_food_button, null);
+        linearLayout.addView(createFoodButton);
+
+        createFoodButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivityForResult(new Intent(SearchFoodActivity.this, AddFoodActivity.class), CREATE_FOOD_IN_SEARCH);
@@ -88,9 +94,9 @@ public class SearchFoodActivity extends AppCompatActivity {
         protected void onPreExecute() {
             super.onPreExecute();
 //            Toast.makeText(SearchFoodActivity.this, "This is my Toast message!", Toast.LENGTH_LONG).show();
-            FrameLayout frameLayout = findViewById(R.id.search_food_result_from_internet);
-            frameLayout.removeAllViews();
-            frameLayout.addView(getLayoutInflater().inflate(R.layout.progress_circle, null));
+            LinearLayout linearLayout = findViewById(R.id.search_food_result_from_internet);
+            linearLayout.removeAllViews();
+            linearLayout.addView(getLayoutInflater().inflate(R.layout.progress_circle, null));
         }
 
         @Override
@@ -156,19 +162,31 @@ public class SearchFoodActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(List<Food> foods) {
             super.onPostExecute(foods);
-            FrameLayout frameLayout = findViewById(R.id.search_food_result_from_internet);
-            frameLayout.removeAllViews();
+            LinearLayout linearLayout = findViewById(R.id.search_food_result_from_internet);
+            linearLayout.removeAllViews();
             // hide keyboard
             InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
             imm.toggleSoftInput(0, InputMethodManager.HIDE_NOT_ALWAYS);
 
+            View createFoodButton;
+
             if (foods.isEmpty()) {
-                frameLayout.addView(getLayoutInflater().inflate(R.layout.no_result_error, null));
+                linearLayout.addView(getLayoutInflater().inflate(R.layout.no_result_error, null));
+                createFoodButton = getLayoutInflater().inflate(R.layout.search_food_create_food_button, null);
+                linearLayout.addView(createFoodButton);
             } else {
-                frameLayout.addView(getLayoutInflater().inflate(R.layout.search_food_result, null));
+                linearLayout.addView(getLayoutInflater().inflate(R.layout.search_food_result, null));
                 ListView listView = findViewById(R.id.search_food_result_list);
                 listView.setAdapter(new SearchFoodListAdapter(foods, SearchFoodActivity.this));
+                createFoodButton = getLayoutInflater().inflate(R.layout.search_food_create_food_button, null);
+                listView.addFooterView(createFoodButton);
             }
+            createFoodButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    startActivityForResult(new Intent(SearchFoodActivity.this, AddFoodActivity.class), CREATE_FOOD_IN_SEARCH);
+                }
+            });
         }
     }
 }

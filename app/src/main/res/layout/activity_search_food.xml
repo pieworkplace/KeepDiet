@@ -25,16 +25,12 @@
 
     </android.support.v7.widget.Toolbar>
 
-    <ScrollView
+    <FrameLayout
+        android:id="@+id/search_food_result_from_internet"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <FrameLayout
-            android:id="@+id/search_food_result_from_internet"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
 
-        </FrameLayout>
-    </ScrollView>
+    </FrameLayout>
 
     <TextView
         android:id="@+id/create_food_button"

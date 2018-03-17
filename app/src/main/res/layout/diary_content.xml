@@ -6,9 +6,12 @@
     android:background="@color/white">
         <TextView
             android:id="@+id/diary_content_title"
+            android:layout_toLeftOf="@id/diary_content_value"
+            android:layout_alignParentLeft="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="Fried Chicken"
+            android:singleLine="true"
             style="@style/TextAppearance.AppCompat.Body1"
             android:paddingLeft="@dimen/diary_tag_large_padding"
             android:paddingRight="@dimen/diary_tag_small_padding"
@@ -16,14 +19,14 @@
             android:ellipsize="end"/>
         <TextView
             android:id="@+id/diary_content_value"
-            android:layout_toRightOf="@id/diary_content_title"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="right"
             tools:text="200"
             style="@style/TextAppearance.AppCompat.Body1"
             android:paddingTop="@dimen/diary_tag_small_padding"
-            android:paddingRight="@dimen/diary_tag_large_padding"/>
+            android:paddingRight="@dimen/diary_tag_large_padding"
+            android:layout_alignParentRight="true"/>
         <TextView
             android:layout_below="@id/diary_content_title"
             android:id="@+id/diary_content_amount"

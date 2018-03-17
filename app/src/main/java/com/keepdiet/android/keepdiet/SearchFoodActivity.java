@@ -40,7 +40,6 @@ public class SearchFoodActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_food);
         Toolbar toolbar = findViewById(R.id.toolbar_search_food);
-//        toolbar.inflateMenu(R.menu.add_food_menu);
         toolbar.setTitle("");
         toolbar.setNavigationIcon(R.drawable.ic_arrow_back_black_24dp);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {

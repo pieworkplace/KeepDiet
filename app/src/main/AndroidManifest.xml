@@ -31,7 +31,8 @@
         <activity android:name=".GroupInformation" />
         <activity android:name=".AddFoodActivity" />
         <activity android:name=".AddExerciseActivity" />
-        <activity android:name=".SearchFoodActivity"></activity>
+        <activity android:name=".SearchFoodActivity" />
+        <activity android:name=".EditFoodActivity"></activity>
     </application>
 
 </manifest>

@@ -40,11 +40,11 @@ public class ItemListAdapter extends RecyclerView.Adapter<ItemListAdapter.ViewHo
 
         } else if (itemList.get(0) instanceof Food) {
             holder.title.setText(((Food) itemList.get(position)).getFoodTitle());
-            holder.value.setText(Integer.toString(((Food) itemList.get(position)).getCaloryPerUnit()));
+            holder.value.setText(Integer.toString(((Food) itemList.get(position)).getTotalCalory()));
             holder.amount.setText(Double.toString(((Food) itemList.get(position)).getUnitNumber()) + " " + ((Food) itemList.get(position)).getUnitName());
         } else {
             holder.title.setText(((Exercise) itemList.get(position)).getExerciseTitle());
-            holder.value.setText(Integer.toString(((Exercise) itemList.get(position)).getCaloryPerUnit()));
+            holder.value.setText(Integer.toString(((Exercise) itemList.get(position)).getCaloryBurned()));
             holder.amount.setText(Double.toString(((Exercise) itemList.get(position)).getUnitNumber()) + " " + ((Exercise) itemList.get(position)).getUnitName());
         }
     }

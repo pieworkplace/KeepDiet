@@ -158,6 +158,89 @@ public class User implements Serializable {
         return sum;
     }
 
+    public void editBreakfastList(int position, Food food){
+        if (position < breakfastList.size() && position >= 0){
+            caloryConsumed -= breakfastList.get(position).getTotalCalory();
+            breakfastList.set(position, food);
+            caloryConsumed += breakfastList.get(position).getTotalCalory();
+            caloryRemaining = caloryGoal - caloryConsumed + caloryBurned;
+        }
+    }
+
+    public void editLunchList(int position, Food food){
+        if (position < lunchList.size() && position >= 0){
+            caloryConsumed -= lunchList.get(position).getTotalCalory();
+            lunchList.set(position, food);
+            caloryConsumed += lunchList.get(position).getTotalCalory();
+            caloryRemaining = caloryGoal - caloryConsumed + caloryBurned;
+        }
+    }
+
+    public void editDinnerList(int position, Food food){
+        if (position < dinnerList.size() && position >= 0){
+            caloryConsumed -= dinnerList.get(position).getTotalCalory();
+            dinnerList.set(position, food);
+            caloryConsumed += dinnerList.get(position).getTotalCalory();
+            caloryRemaining = caloryGoal - caloryConsumed + caloryBurned;
+        }
+    }
+    public void editSnackList(int position, Food food){
+        if (position < snackList.size() && position >= 0){
+            caloryConsumed -= snackList.get(position).getTotalCalory();
+            snackList.set(position, food);
+            caloryConsumed += snackList.get(position).getTotalCalory();
+            caloryRemaining = caloryGoal - caloryConsumed + caloryBurned;
+        }
+    }
+
+    public void editExerciseList(int position, Exercise exercise){
+        if (position < exerciseList.size() && position >= 0){
+            caloryBurned -= exerciseList.get(position).getCaloryBurned();
+            exerciseList.set(position, exercise);
+            caloryBurned += exerciseList.get(position).getCaloryBurned();
+            caloryRemaining = caloryGoal - caloryConsumed + caloryBurned;
+        }
+    }
+
+    public void removeBreakfastList(int position){
+        if (position < breakfastList.size() && position >= 0){
+            caloryConsumed -= breakfastList.get(position).getTotalCalory();
+            breakfastList.remove(position);
+            caloryRemaining = caloryGoal - caloryConsumed + caloryBurned;
+        }
+    }
+
+    public void removeLunchList(int position){
+        if (position < lunchList.size() && position >= 0){
+            caloryConsumed -= lunchList.get(position).getTotalCalory();
+            lunchList.remove(position);
+            caloryRemaining = caloryGoal - caloryConsumed + caloryBurned;
+        }
+    }
+
+    public void removeDinnerList(int position){
+        if (position < dinnerList.size() && position >= 0){
+            caloryConsumed -= dinnerList.get(position).getTotalCalory();
+            dinnerList.remove(position);
+            caloryRemaining = caloryGoal - caloryConsumed + caloryBurned;
+        }
+    }
+    public void removeSnackList(int position){
+        if (position < snackList.size() && position >= 0){
+            caloryConsumed -= snackList.get(position).getTotalCalory();
+            snackList.remove(position);
+            caloryRemaining = caloryGoal - caloryConsumed + caloryBurned;
+        }
+    }
+
+    public void removeExerciseList(int position){
+        if (position < exerciseList.size() && position >= 0){
+            caloryBurned -= exerciseList.get(position).getCaloryBurned();
+            exerciseList.remove(position);
+            caloryRemaining = caloryGoal - caloryConsumed + caloryBurned;
+        }
+    }
+
 
     public User() {
         //TODO change fake data
@@ -177,6 +260,9 @@ public class User implements Serializable {
         addDinnerList(new Food("Fried Chicken", 200, 1, "pound"));
         addDinnerList(new Food("Fried Chicken", 200, 1, "pound"));
         addBreakfastList(new Food("Fried Chicken", 200, 1, "pound"));
-
+        addExerciseList(new Exercise("running", 200, 1, "lalala"));
+        addExerciseList(new Exercise("running", 200, 1, "lalala"));
     }
+
+
 }

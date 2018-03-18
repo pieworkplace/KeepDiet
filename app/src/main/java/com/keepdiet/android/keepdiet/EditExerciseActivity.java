@@ -10,31 +10,32 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 
+import com.keepdiet.android.keepdiet.userData.Exercise;
 import com.keepdiet.android.keepdiet.userData.Food;
 
-import static com.keepdiet.android.keepdiet.EditExerciseActivity.DELETE_RESULT_OK;
+import static com.keepdiet.android.keepdiet.EditFoodActivity.EDIT_RESULT_OK;
 
-public class EditFoodActivity extends AppCompatActivity {
+public class EditExerciseActivity extends AppCompatActivity {
 
-    public static final int EDIT_RESULT_OK = 100;
+    public static final int DELETE_RESULT_OK = 200;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_edit_food);
+        setContentView(R.layout.activity_edit_exercise);
 
         // process data passed in
-        Food food = (Food) getIntent().getSerializableExtra("Food");
+        Exercise exercise = (Exercise) getIntent().getSerializableExtra("Exercise");
         final int position = getIntent().getIntExtra("position", -1);
-        if (food != null){
-            ((EditText) findViewById(R.id.diary_content_edit_title_edit)).setText(food.getFoodTitle());
-            ((EditText) findViewById(R.id.diary_content_edit_calory_per_unit_edit)).setText(Integer.toString(food.getCaloryPerUnit()));
-            ((EditText) findViewById(R.id.diary_content_edit_amount_edit)).setText(Double.toString(food.getUnitNumber()));
-            ((EditText) findViewById(R.id.diary_content_edit_unit_name_edit)).setText(food.getUnitName());
+        if (exercise != null){
+            ((EditText) findViewById(R.id.diary_content_edit_title_edit)).setText(exercise.getExerciseTitle());
+            ((EditText) findViewById(R.id.diary_content_edit_calory_per_unit_edit)).setText(Integer.toString(exercise.getCaloryPerUnit()));
+            ((EditText) findViewById(R.id.diary_content_edit_amount_edit)).setText(Double.toString(exercise.getUnitNumber()));
+            ((EditText) findViewById(R.id.diary_content_edit_unit_name_edit)).setText(exercise.getUnitName());
         }
 
         //toolbar related
-        Toolbar toolbar = findViewById(R.id.toolbar_edit_food);
+        Toolbar toolbar = findViewById(R.id.toolbar_edit_exercise);
         toolbar.inflateMenu(R.menu.edit_food_menu);
         toolbar.setTitle("");
         toolbar.setNavigationIcon(R.drawable.ic_arrow_back_black_24dp);
@@ -62,9 +63,9 @@ public class EditFoodActivity extends AppCompatActivity {
                         } else {
                             int caloryPerUnit = (int) Double.parseDouble(calPerUnitText);
                             double unitNumber = Double.parseDouble(amountText);
-                            Food food = new Food(titleText, caloryPerUnit, unitNumber, unitNameText);
+                            Exercise exercise = new Exercise(titleText, caloryPerUnit, unitNumber, unitNameText);
                             intent = new Intent();
-                            intent.putExtra("Food", food);
+                            intent.putExtra("Exercise", exercise);
                             intent.putExtra("position", position);
                             setResult(EDIT_RESULT_OK, intent);
                             finish();
@@ -100,5 +101,4 @@ public class EditFoodActivity extends AppCompatActivity {
         });
         alertDialog.show();
     }
-
 }

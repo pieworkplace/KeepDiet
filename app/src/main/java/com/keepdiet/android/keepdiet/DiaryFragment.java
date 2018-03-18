@@ -21,9 +21,12 @@ import com.keepdiet.android.keepdiet.userData.Food;
 import com.keepdiet.android.keepdiet.userData.User;
 import com.keepdiet.android.keepdiet.utils.ItemListAdapter;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static android.app.Activity.RESULT_OK;
+import static com.keepdiet.android.keepdiet.EditExerciseActivity.DELETE_RESULT_OK;
+import static com.keepdiet.android.keepdiet.EditFoodActivity.EDIT_RESULT_OK;
 
 
 /**
@@ -71,13 +74,13 @@ public class DiaryFragment extends Fragment {
 
     private void setTargetData(View view) {
         User user = ((MainActivity) getActivity()).getUser();
-        ((TextView) view.findViewById(R.id.diary_target_number)).setText(String.format("%,d",user.getCaloryGoal()));
+        ((TextView) view.findViewById(R.id.diary_target_number)).setText(String.format("%,d", user.getCaloryGoal()));
         ((TextView) view.findViewById(R.id.diary_food_number)).setText(String.format("%,d", user.getCaloryConsumed()));
         ((TextView) view.findViewById(R.id.diary_exercise_number)).setText(String.format("%,d", user.getCaloryBurned()));
         ((TextView) view.findViewById(R.id.diary_remain_number)).setText(String.format("%,d", user.getCaloryRemaining()));
     }
 
-    private void setListData(View view, int R_id_header, int R_id_footer, int R_id_item, List<?> itemList, int totalCalory, final int R_string_item, int R_string_add_item) {
+    private void setListData(View view, int R_id_header, int R_id_footer, int R_id_item, final List<?> itemList, int totalCalory, final int R_string_item, int R_string_add_item) {
         //get user data
         User user = ((MainActivity) getActivity()).getUser();
 
@@ -92,13 +95,53 @@ public class DiaryFragment extends Fragment {
         RecyclerView listViewItem = view.findViewById(R_id_item);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
         listViewItem.setLayoutManager(layoutManager);
-        listViewItem.setAdapter(new ItemListAdapter(itemList));
+        ItemListAdapter itemListAdapter = new ItemListAdapter(new ArrayList<Object>(itemList));
+        itemListAdapter.setOnItemClickListner(new ItemListAdapter.OnItemClickListner() {
+            @Override
+            public void onItemClick(int position) {
+                Intent intent;
+                switch (R_string_item) {
+                    case R.string.diary_food_breakfast:
+                        intent = new Intent(getActivity(), EditFoodActivity.class);
+                        intent.putExtra("position", position);
+                        intent.putExtra("Food", (Food) itemList.get(position));
+                        startActivityForResult(intent, REQUEST_ADD_BREAKFAST);
+                        break;
+                    case R.string.diary_food_lunch:
+                        intent = new Intent(getActivity(), EditFoodActivity.class);
+                        intent.putExtra("position", position);
+                        intent.putExtra("Food", (Food) itemList.get(position));
+                        startActivityForResult(intent, REQUEST_ADD_LUNCH);
+                        break;
+                    case R.string.diary_food_dinner:
+                        intent = new Intent(getActivity(), EditFoodActivity.class);
+                        intent.putExtra("position", position);
+                        intent.putExtra("Food", (Food) itemList.get(position));
+                        startActivityForResult(intent, REQUEST_ADD_DINNER);
+                        break;
+                    case R.string.diary_food_snacks:
+                        intent = new Intent(getActivity(), EditFoodActivity.class);
+                        intent.putExtra("position", position);
+                        intent.putExtra("Food", (Food) itemList.get(position));
+                        startActivityForResult(intent, REQUEST_ADD_SNACKS);
+                        break;
+                    case R.string.diary_exercise:
+                        intent = new Intent(getActivity(), EditExerciseActivity.class);
+                        intent.putExtra("position", position);
+                        intent.putExtra("Exercise", (Exercise) itemList.get(position));
+                        startActivityForResult(intent, REQUEST_ADD_EXERCISE);
+                        break;
+                }
+            }
+        });
+        listViewItem.setAdapter(itemListAdapter);
+
 
         //set footer (add button)
         footer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                switch (R_string_item){
+                switch (R_string_item) {
                     case R.string.diary_food_breakfast:
                         startActivityForResult(new Intent(getActivity(), SearchFoodActivity.class), REQUEST_ADD_BREAKFAST);
                         break;
@@ -117,15 +160,14 @@ public class DiaryFragment extends Fragment {
                 }
             }
         });
-
     }
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (resultCode == RESULT_OK){
-            User user = ((MainActivity)getActivity()).getUser();
-            switch (requestCode){
+        User user = ((MainActivity) getActivity()).getUser();
+        if (resultCode == RESULT_OK) {
+            switch (requestCode) {
                 case REQUEST_ADD_BREAKFAST:
                     user.addBreakfastList((Food) data.getSerializableExtra("Food"));
                     break;
@@ -142,8 +184,45 @@ public class DiaryFragment extends Fragment {
                     user.addExerciseList((Exercise) data.getSerializableExtra("Exercise"));
                     break;
             }
-            getFragmentManager().beginTransaction().detach(this).attach(this).commit();
+        } else if (resultCode == EDIT_RESULT_OK) {
+            int position = data.getIntExtra("position", -1);
+            switch (requestCode) {
+                case REQUEST_ADD_BREAKFAST:
+                    user.editBreakfastList(position, (Food) data.getSerializableExtra("Food"));
+                    break;
+                case REQUEST_ADD_LUNCH:
+                    user.editLunchList(position, (Food) data.getSerializableExtra("Food"));
+                    break;
+                case REQUEST_ADD_DINNER:
+                    user.editDinnerList(position, (Food) data.getSerializableExtra("Food"));
+                    break;
+                case REQUEST_ADD_SNACKS:
+                    user.editSnackList(position, (Food) data.getSerializableExtra("Food"));
+                    break;
+                case REQUEST_ADD_EXERCISE:
+                    user.editExerciseList(position, (Exercise) data.getSerializableExtra("Exercise"));
+                    break;
+            }
+        }else if (resultCode == DELETE_RESULT_OK){
+            int position = data.getIntExtra("position", -1);
+            switch (requestCode) {
+                case REQUEST_ADD_BREAKFAST:
+                    user.removeBreakfastList(position);
+                    break;
+                case REQUEST_ADD_LUNCH:
+                    user.removeLunchList(position);
+                    break;
+                case REQUEST_ADD_DINNER:
+                    user.removeDinnerList(position);
+                    break;
+                case REQUEST_ADD_SNACKS:
+                    user.removeSnackList(position);
+                    break;
+                case REQUEST_ADD_EXERCISE:
+                    user.removeExerciseList(position);
+                    break;
+            }
         }
+        getFragmentManager().beginTransaction().detach(this).attach(this).commit();
     }
-
 }

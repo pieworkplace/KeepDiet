@@ -70,4 +70,8 @@
     <string name="internet_connection_error">Internet connection error. Please try again.</string>
     <string name="diary_edit_food">Edit Food</string>
     <string name="diary_add_exercise">Add Exercise</string>
+    <string name="diary_edit_exercise">Edit Exercise</string>
+    <string name="delete_item_alert">Are you sure to delete this item?</string>
+    <string name="cancel">Cancel</string>
+    <string name="yes">Yes</string>
 </resources>

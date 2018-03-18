@@ -19,6 +19,16 @@ public class AddFoodActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_food);
+
+        // process data passed in
+        Food food = (Food) getIntent().getSerializableExtra("Food");
+        if (food != null){
+            ((EditText) findViewById(R.id.diary_content_title_edit)).setText(food.getFoodTitle());
+            ((EditText) findViewById(R.id.diary_content_calory_per_unit_edit)).setText(Integer.toString(food.getCaloryPerUnit()));
+            ((EditText) findViewById(R.id.diary_content_amount_edit)).setText(Double.toString(food.getUnitNumber()));
+            ((EditText) findViewById(R.id.diary_content_unit_name_edit)).setText(food.getUnitName());
+        }
+
         Toolbar toolbar = findViewById(R.id.toolbar_add_food);
         toolbar.inflateMenu(R.menu.add_food_menu);
         toolbar.setTitle("");

@@ -79,7 +79,7 @@ public class DiaryFragment extends Fragment {
         //set toolbar
         LocalDate localDate = ((MainActivity) getActivity()).getDiary().getDate();
         String dateText = localDate.toString();
-        final TextView toolbarText = ((TextView) (view.findViewById(R.id.diary_fragment_toolbar_text)));
+        final TextView toolbarText = view.findViewById(R.id.diary_fragment_toolbar_text);
         toolbarText.setText(dateText);
         toolbarText.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -92,6 +92,7 @@ public class DiaryFragment extends Fragment {
                         ((MainActivity) getActivity()).getDiary().setDate((new Date(i - 1900, i1, i2).toInstant().atZone(ZoneId.systemDefault()).toLocalDate()));
                         String dateText = ((MainActivity) getActivity()).getDiary().getDate().toString();
                         toolbarText.setText(dateText);
+                        getFragmentManager().beginTransaction().detach(DiaryFragment.this).attach(DiaryFragment.this).commit();
                     }
                 }, currentDate.getYear(), currentDate.getMonthValue() - 1, currentDate.getDayOfMonth());
                 dialog.show();

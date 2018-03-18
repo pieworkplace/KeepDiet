@@ -234,7 +234,9 @@ public class Diary implements Serializable {
     @RequiresApi(api = Build.VERSION_CODES.O)
     public Diary() {
         //TODO change fake data
-        date = (new Date()).toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        date = (new Date(2018 - 1900,8 - 1,20)).toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        userID = 0;
+        ID = Integer.parseInt(date.toString().replace("-", ""));
 
         caloryGoal = 2000;
         caloryBurned = 0;

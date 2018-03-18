@@ -1,27 +1,33 @@
 package com.keepdiet.android.keepdiet;
 
 
+import android.app.DatePickerDialog;
+import android.app.Dialog;
 import android.content.Intent;
+import android.icu.text.DateFormat;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.annotation.RequiresApi;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.DatePicker;
 import android.widget.FrameLayout;
-import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import com.keepdiet.android.keepdiet.userData.Diary;
 import com.keepdiet.android.keepdiet.userData.Exercise;
 import com.keepdiet.android.keepdiet.userData.Food;
-import com.keepdiet.android.keepdiet.userData.User;
 import com.keepdiet.android.keepdiet.utils.ItemListAdapter;
 
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import static android.app.Activity.RESULT_OK;
@@ -47,8 +53,8 @@ public class DiaryFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        //get user data
-        User user = ((MainActivity) getActivity()).getUser();
+        //get diary data
+        Diary diary = ((MainActivity) getActivity()).getDiary();
 
         //inflate target table
         View view = inflater.inflate(R.layout.fragment_diary, container, false);
@@ -57,32 +63,54 @@ public class DiaryFragment extends Fragment {
         setTargetData(view);
 
         //set lists
-        setListData(view, R.id.diary_breakfast_header, R.id.diary_breakfast_footer, R.id.diary_breakfast, user.getBreakfastList(), user.getBreakfastTotalCalory(), R.string.diary_food_breakfast, R.string.diary_add_food);
-        setListData(view, R.id.diary_lunch_header, R.id.diary_lunch_footer, R.id.diary_lunch, user.getLunchList(), user.getLunchTotalCalory(), R.string.diary_food_lunch, R.string.diary_add_food);
-        setListData(view, R.id.diary_dinner_header, R.id.diary_dinner_footer, R.id.diary_dinner, user.getDinnerList(), user.getDinnerTotalCalory(), R.string.diary_food_dinner, R.string.diary_add_food);
-        setListData(view, R.id.diary_snack_header, R.id.diary_snack_footer, R.id.diary_snack, user.getSnackList(), user.getSnackTotalCalory(), R.string.diary_food_snacks, R.string.diary_add_food);
-        setListData(view, R.id.diary_exercise_header, R.id.diary_exercise_footer, R.id.diary_exercise, user.getExerciseList(), user.getExerciseTotalCalory(), R.string.diary_exercise, R.string.diary_add_exercise);
+        setListData(view, R.id.diary_breakfast_header, R.id.diary_breakfast_footer, R.id.diary_breakfast, diary.getBreakfastList(), diary.getBreakfastTotalCalory(), R.string.diary_food_breakfast, R.string.diary_add_food);
+        setListData(view, R.id.diary_lunch_header, R.id.diary_lunch_footer, R.id.diary_lunch, diary.getLunchList(), diary.getLunchTotalCalory(), R.string.diary_food_lunch, R.string.diary_add_food);
+        setListData(view, R.id.diary_dinner_header, R.id.diary_dinner_footer, R.id.diary_dinner, diary.getDinnerList(), diary.getDinnerTotalCalory(), R.string.diary_food_dinner, R.string.diary_add_food);
+        setListData(view, R.id.diary_snack_header, R.id.diary_snack_footer, R.id.diary_snack, diary.getSnackList(), diary.getSnackTotalCalory(), R.string.diary_food_snacks, R.string.diary_add_food);
+        setListData(view, R.id.diary_exercise_header, R.id.diary_exercise_footer, R.id.diary_exercise, diary.getExerciseList(), diary.getExerciseTotalCalory(), R.string.diary_exercise, R.string.diary_add_exercise);
 
         return view;
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        //set toolbar
+        LocalDate localDate = ((MainActivity) getActivity()).getDiary().getDate();
+        String dateText = localDate.toString();
+        final TextView toolbarText = ((TextView) (view.findViewById(R.id.diary_fragment_toolbar_text)));
+        toolbarText.setText(dateText);
+        toolbarText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                LocalDate currentDate = ((MainActivity) getActivity()).getDiary().getDate();
+                Dialog dialog = new DatePickerDialog(getActivity(), new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
+                        //TODO change this later
+                        ((MainActivity) getActivity()).getDiary().setDate((new Date(i - 1900, i1, i2).toInstant().atZone(ZoneId.systemDefault()).toLocalDate()));
+                        String dateText = ((MainActivity) getActivity()).getDiary().getDate().toString();
+                        toolbarText.setText(dateText);
+                    }
+                }, currentDate.getYear(), currentDate.getMonthValue() - 1, currentDate.getDayOfMonth());
+                dialog.show();
+            }
+        });
 
     }
 
     private void setTargetData(View view) {
-        User user = ((MainActivity) getActivity()).getUser();
-        ((TextView) view.findViewById(R.id.diary_target_number)).setText(String.format("%,d", user.getCaloryGoal()));
-        ((TextView) view.findViewById(R.id.diary_food_number)).setText(String.format("%,d", user.getCaloryConsumed()));
-        ((TextView) view.findViewById(R.id.diary_exercise_number)).setText(String.format("%,d", user.getCaloryBurned()));
-        ((TextView) view.findViewById(R.id.diary_remain_number)).setText(String.format("%,d", user.getCaloryRemaining()));
+        Diary diary = ((MainActivity) getActivity()).getDiary();
+        ((TextView) view.findViewById(R.id.diary_target_number)).setText(String.format("%,d", diary.getCaloryGoal()));
+        ((TextView) view.findViewById(R.id.diary_food_number)).setText(String.format("%,d", diary.getCaloryConsumed()));
+        ((TextView) view.findViewById(R.id.diary_exercise_number)).setText(String.format("%,d", diary.getCaloryBurned()));
+        ((TextView) view.findViewById(R.id.diary_remain_number)).setText(String.format("%,d", diary.getCaloryRemaining()));
     }
 
     private void setListData(View view, int R_id_header, int R_id_footer, int R_id_item, final List<?> itemList, int totalCalory, final int R_string_item, int R_string_add_item) {
-        //get user data
-        User user = ((MainActivity) getActivity()).getUser();
+        //get diary data
+        Diary diary = ((MainActivity) getActivity()).getDiary();
 
         View header = getLayoutInflater().inflate(R.layout.diary_tag_header, null);
         View footer = getLayoutInflater().inflate(R.layout.diary_tag_footer, null);
@@ -165,61 +193,61 @@ public class DiaryFragment extends Fragment {
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        User user = ((MainActivity) getActivity()).getUser();
+        Diary diary = ((MainActivity) getActivity()).getDiary();
         if (resultCode == RESULT_OK) {
             switch (requestCode) {
                 case REQUEST_ADD_BREAKFAST:
-                    user.addBreakfastList((Food) data.getSerializableExtra("Food"));
+                    diary.addBreakfastList((Food) data.getSerializableExtra("Food"));
                     break;
                 case REQUEST_ADD_LUNCH:
-                    user.addLunchList((Food) data.getSerializableExtra("Food"));
+                    diary.addLunchList((Food) data.getSerializableExtra("Food"));
                     break;
                 case REQUEST_ADD_DINNER:
-                    user.addDinnerList((Food) data.getSerializableExtra("Food"));
+                    diary.addDinnerList((Food) data.getSerializableExtra("Food"));
                     break;
                 case REQUEST_ADD_SNACKS:
-                    user.addSnackList((Food) data.getSerializableExtra("Food"));
+                    diary.addSnackList((Food) data.getSerializableExtra("Food"));
                     break;
                 case REQUEST_ADD_EXERCISE:
-                    user.addExerciseList((Exercise) data.getSerializableExtra("Exercise"));
+                    diary.addExerciseList((Exercise) data.getSerializableExtra("Exercise"));
                     break;
             }
         } else if (resultCode == EDIT_RESULT_OK) {
             int position = data.getIntExtra("position", -1);
             switch (requestCode) {
                 case REQUEST_ADD_BREAKFAST:
-                    user.editBreakfastList(position, (Food) data.getSerializableExtra("Food"));
+                    diary.editBreakfastList(position, (Food) data.getSerializableExtra("Food"));
                     break;
                 case REQUEST_ADD_LUNCH:
-                    user.editLunchList(position, (Food) data.getSerializableExtra("Food"));
+                    diary.editLunchList(position, (Food) data.getSerializableExtra("Food"));
                     break;
                 case REQUEST_ADD_DINNER:
-                    user.editDinnerList(position, (Food) data.getSerializableExtra("Food"));
+                    diary.editDinnerList(position, (Food) data.getSerializableExtra("Food"));
                     break;
                 case REQUEST_ADD_SNACKS:
-                    user.editSnackList(position, (Food) data.getSerializableExtra("Food"));
+                    diary.editSnackList(position, (Food) data.getSerializableExtra("Food"));
                     break;
                 case REQUEST_ADD_EXERCISE:
-                    user.editExerciseList(position, (Exercise) data.getSerializableExtra("Exercise"));
+                    diary.editExerciseList(position, (Exercise) data.getSerializableExtra("Exercise"));
                     break;
             }
-        }else if (resultCode == DELETE_RESULT_OK){
+        } else if (resultCode == DELETE_RESULT_OK) {
             int position = data.getIntExtra("position", -1);
             switch (requestCode) {
                 case REQUEST_ADD_BREAKFAST:
-                    user.removeBreakfastList(position);
+                    diary.removeBreakfastList(position);
                     break;
                 case REQUEST_ADD_LUNCH:
-                    user.removeLunchList(position);
+                    diary.removeLunchList(position);
                     break;
                 case REQUEST_ADD_DINNER:
-                    user.removeDinnerList(position);
+                    diary.removeDinnerList(position);
                     break;
                 case REQUEST_ADD_SNACKS:
-                    user.removeSnackList(position);
+                    diary.removeSnackList(position);
                     break;
                 case REQUEST_ADD_EXERCISE:
-                    user.removeExerciseList(position);
+                    diary.removeExerciseList(position);
                     break;
             }
         }

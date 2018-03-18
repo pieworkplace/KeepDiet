@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.keepdiet.android.keepdiet.userData.User;
+import com.keepdiet.android.keepdiet.userData.Diary;
 
 
 /**
@@ -28,9 +28,9 @@ public class MoreFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        User user = ((MainActivity) getActivity()).getUser();
+        Diary diary = ((MainActivity) getActivity()).getDiary();
         View view = inflater.inflate(R.layout.fragment_more, container, false);
-        ((TextView) view.findViewById(R.id.more_account)).setText(user.getUsername());
+        ((TextView) view.findViewById(R.id.more_account)).setText("TODO");
         return view;
     }
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {

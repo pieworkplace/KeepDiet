@@ -1,21 +1,24 @@
 package com.keepdiet.android.keepdiet.userData;
 
-import android.app.Fragment;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 
 import java.io.Serializable;
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
  * Created by Liu Junlin on 2018/3/12.
  */
 
-public class User implements Serializable {
-    //identity related
+public class Diary implements Serializable {
+    //identity
     private int ID;
-    private String username;
-
-    //diary related
+    private int userID;
+    private LocalDate date;
     //overall
     private int caloryGoal;
     private int caloryConsumed;
@@ -29,43 +32,20 @@ public class User implements Serializable {
     //exercise
     private List<Exercise> exerciseList;
 
-    //group related
-
-
     public int getCaloryGoal() {
         return caloryGoal;
-    }
-
-    public void setCaloryGoal(int caloryGoal) {
-        this.caloryGoal = caloryGoal;
     }
 
     public int getCaloryConsumed() {
         return caloryConsumed;
     }
 
-    public void setCaloryConsumed(int caloryConsumed) {
-        this.caloryConsumed = caloryConsumed;
-    }
-
     public int getCaloryBurned() {
         return caloryBurned;
     }
 
-    public void setCaloryBurned(int caloryBurned) {
-        this.caloryBurned = caloryBurned;
-    }
-
     public int getCaloryRemaining() {
         return caloryRemaining;
-    }
-
-    public void setCaloryRemaining(int caloryRemaining) {
-        this.caloryRemaining = caloryRemaining;
-    }
-
-    public String getUsername() {
-        return username;
     }
 
     public List<Food> getBreakfastList() {
@@ -86,6 +66,14 @@ public class User implements Serializable {
 
     public List<Exercise> getExerciseList() {
         return exerciseList;
+    }
+
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public void setDate(LocalDate date) {
+        this.date = date;
     }
 
     public void addBreakfastList(Food food) {
@@ -184,6 +172,7 @@ public class User implements Serializable {
             caloryRemaining = caloryGoal - caloryConsumed + caloryBurned;
         }
     }
+
     public void editSnackList(int position, Food food){
         if (position < snackList.size() && position >= 0){
             caloryConsumed -= snackList.get(position).getTotalCalory();
@@ -225,6 +214,7 @@ public class User implements Serializable {
             caloryRemaining = caloryGoal - caloryConsumed + caloryBurned;
         }
     }
+
     public void removeSnackList(int position){
         if (position < snackList.size() && position >= 0){
             caloryConsumed -= snackList.get(position).getTotalCalory();
@@ -241,14 +231,15 @@ public class User implements Serializable {
         }
     }
 
-
-    public User() {
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    public Diary() {
         //TODO change fake data
+        date = (new Date()).toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+
         caloryGoal = 2000;
         caloryBurned = 0;
         caloryConsumed = 0;
         caloryRemaining = caloryGoal - caloryConsumed + caloryBurned;
-        username = "Haoting Li";
 
         breakfastList = new ArrayList<Food>();
         lunchList = new ArrayList<Food>();

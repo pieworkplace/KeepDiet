@@ -1,5 +1,6 @@
 package com.keepdiet.android.keepdiet;
 
+import android.app.DatePickerDialog;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.FragmentManager;
@@ -7,18 +8,19 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.DatePicker;
 
-import com.keepdiet.android.keepdiet.userData.User;
+import com.keepdiet.android.keepdiet.userData.Diary;
 import com.keepdiet.android.keepdiet.utils.BottomNavigationViewHelper;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity{
 
     public static final String DIARY = "diary";
     public static final String FEED = "feed";
     public static final String GROUP = "group";
     public static final String MORE = "more";
 
-    public User user = new User();
+    public Diary diary = new Diary();
 
     //disable back button
     @Override
@@ -89,8 +91,8 @@ public class MainActivity extends AppCompatActivity {
         transaction.commit();
     }
 
-    public User getUser() {
-        return user;
+    public Diary getDiary() {
+        return diary;
     }
 
 }

@@ -23,6 +23,7 @@ public class Group implements Serializable{
         this.users = users;
         this.location = location;
         this.groupTarget = groupTarget;
+
     }
 
 

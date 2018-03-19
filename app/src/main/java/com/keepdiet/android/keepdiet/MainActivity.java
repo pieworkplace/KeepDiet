@@ -12,7 +12,6 @@ import android.widget.DatePicker;
 
 import com.keepdiet.android.keepdiet.userData.Group;
 import com.keepdiet.android.keepdiet.userData.Target;
-import com.keepdiet.android.keepdiet.userData.User;
 import com.keepdiet.android.keepdiet.utils.BottomNavigationViewHelper;
 
 import java.util.ArrayList;
@@ -34,7 +33,6 @@ public class MainActivity extends AppCompatActivity{
     public Target target4 = new Target("Swimming 1 mile", false);
     public Target target5 = new Target("Walk 20000 steps", false);
 
-    public User user = new User();
     public Group group;// = new Group(5, 0001, "KeepDiet", new ArrayList<Integer>(Arrays.asList(1001, 1002, 1003)), "Atlanta", "Lose Weight");
 
     public Diary diary = new Diary();

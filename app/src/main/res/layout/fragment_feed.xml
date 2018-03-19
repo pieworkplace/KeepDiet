@@ -164,7 +164,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/Tony"
-                    android:text="I am a new user of this application, and I really want to lose some weight and keep diet. \n Anyone who doesn't join any group can come to join me!!! \n I am sure that we will have a great time together and win more points!!!"
+                    android:text="I am a new diary of this application, and I really want to lose some weight and keep diet. \n Anyone who doesn't join any group can come to join me!!! \n I am sure that we will have a great time together and win more points!!!"
                     android:textStyle="italic"
                     android:paddingLeft="20dp"
                     android:paddingBottom="30dp"/>

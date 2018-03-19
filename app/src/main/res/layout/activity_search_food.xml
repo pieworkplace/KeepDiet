@@ -19,41 +19,19 @@
             android:layout_height="match_parent"
             app:iconifiedByDefault="false"
             app:defaultQueryHint="@string/add_food_title_example"
-            android:background="@drawable/rounded_corner_background">
+            android:background="@drawable/rounded_corner_background"
+            android:layout_marginRight="@dimen/diary_tag_small_padding">
 
         </android.support.v7.widget.SearchView>
 
     </android.support.v7.widget.Toolbar>
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <FrameLayout
-            android:id="@+id/search_food_result_from_internet"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-        </FrameLayout>
-    </ScrollView>
-
-    <TextView
-        android:id="@+id/create_food_button"
-        android:textColor="@color/colorPrimaryDark"
+    <LinearLayout
+        android:id="@+id/search_food_result_from_internet"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/diary_tag_large_padding"
-        android:layout_marginBottom="@dimen/diary_tag_large_padding"
-        android:background="@drawable/rounded_corner_background_border"
-        android:paddingBottom="@dimen/diary_tag_small_padding"
-        android:paddingEnd="@dimen/diary_tag_large_padding"
-        android:paddingStart="@dimen/diary_tag_large_padding"
-        android:paddingTop="@dimen/diary_tag_small_padding"
-        android:layout_marginLeft="@dimen/diary_tag_large_padding"
-        android:layout_marginRight="@dimen/diary_tag_large_padding"
-        android:textAlignment="center"
-        android:text="@string/diary_create_food"/>
+        android:orientation="vertical">
 
-
-
+    </LinearLayout>
 
 </LinearLayout>

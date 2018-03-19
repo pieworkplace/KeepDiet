@@ -54,4 +54,14 @@ public class Food implements Serializable{
     public int getTotalCalory(){
         return ((int) (caloryPerUnit * unitNumber));
     }
+
+    @Override
+    public String toString() {
+        return "Food{" +
+                "foodTitle='" + foodTitle + '\'' +
+                ", caloryPerUnit=" + caloryPerUnit +
+                ", unitNumber=" + unitNumber +
+                ", unitName='" + unitName + '\'' +
+                '}';
+    }
 }

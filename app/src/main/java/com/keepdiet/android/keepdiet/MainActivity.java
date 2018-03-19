@@ -1,5 +1,6 @@
 package com.keepdiet.android.keepdiet;
 
+import android.app.DatePickerDialog;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.FragmentManager;
@@ -7,6 +8,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.DatePicker;
 
 import com.keepdiet.android.keepdiet.userData.Group;
 import com.keepdiet.android.keepdiet.userData.Target;
@@ -16,7 +18,10 @@ import com.keepdiet.android.keepdiet.utils.BottomNavigationViewHelper;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class MainActivity extends AppCompatActivity {
+import com.keepdiet.android.keepdiet.userData.Diary;
+import com.keepdiet.android.keepdiet.utils.BottomNavigationViewHelper;
+
+public class MainActivity extends AppCompatActivity{
 
     public static final String DIARY = "diary";
     public static final String FEED = "feed";
@@ -32,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
     public User user = new User();
     public Group group;// = new Group(5, 0001, "KeepDiet", new ArrayList<Integer>(Arrays.asList(1001, 1002, 1003)), "Atlanta", "Lose Weight");
 
+    public Diary diary = new Diary();
 
     //    public Group group1 = new Group(5, 0001, "KeepDiet", new ArrayList<Integer>(Arrays.asList(1001, 1002, 1003)), "Atlanta", "Lose Weight");
 //    public Group group2 = new Group(3, 0002, "DietKeep", new ArrayList<Integer>(Arrays.asList(1011, 1012, 1013)), "Atlanta", "Build Muscle");
@@ -106,8 +112,8 @@ public class MainActivity extends AppCompatActivity {
         transaction.commit();
     }
 
-    public User getUser() {
-        return user;
+    public Diary getDiary() {
+        return diary;
     }
 
 }

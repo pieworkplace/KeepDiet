@@ -4,8 +4,6 @@ import android.os.Build;
 import android.support.annotation.RequiresApi;
 
 import java.io.Serializable;
-import java.time.LocalDate;
-import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -18,7 +16,7 @@ public class Diary implements Serializable {
     //identity
     private int ID;
     private int userID;
-    private LocalDate date;
+    private Date date;
     //overall
     private int caloryGoal;
     private int caloryConsumed;
@@ -31,6 +29,14 @@ public class Diary implements Serializable {
     private List<Food> snackList;
     //exercise
     private List<Exercise> exerciseList;
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
 
     public int getCaloryGoal() {
         return caloryGoal;
@@ -66,14 +72,6 @@ public class Diary implements Serializable {
 
     public List<Exercise> getExerciseList() {
         return exerciseList;
-    }
-
-    public LocalDate getDate() {
-        return date;
-    }
-
-    public void setDate(LocalDate date) {
-        this.date = date;
     }
 
     public void addBreakfastList(Food food) {
@@ -231,12 +229,10 @@ public class Diary implements Serializable {
         }
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
     public Diary() {
         //TODO change fake data
-        date = (new Date(2018 - 1900,8 - 1,20)).toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
         userID = 0;
-        ID = Integer.parseInt(date.toString().replace("-", ""));
+        date = new Date();
 
         caloryGoal = 2000;
         caloryBurned = 0;

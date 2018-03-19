@@ -5,6 +5,7 @@ import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.content.Intent;
 import android.icu.text.DateFormat;
+import android.icu.text.SimpleDateFormat;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -72,29 +73,32 @@ public class DiaryFragment extends Fragment {
         return view;
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         //set toolbar
-        LocalDate localDate = ((MainActivity) getActivity()).getDiary().getDate();
-        String dateText = localDate.toString();
+        Date date = ((MainActivity) getActivity()).getDiary().getDate();
+        final java.text.SimpleDateFormat formatter = new java.text.SimpleDateFormat("yyyy-MM-dd");
+        final String dateText = formatter.format(date);
+
         final TextView toolbarText = view.findViewById(R.id.diary_fragment_toolbar_text);
         toolbarText.setText(dateText);
+
         toolbarText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                LocalDate currentDate = ((MainActivity) getActivity()).getDiary().getDate();
+                Date date = ((MainActivity) getActivity()).getDiary().getDate();
                 Dialog dialog = new DatePickerDialog(getActivity(), new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
                         //TODO change this later
-                        ((MainActivity) getActivity()).getDiary().setDate((new Date(i - 1900, i1, i2).toInstant().atZone(ZoneId.systemDefault()).toLocalDate()));
-                        String dateText = ((MainActivity) getActivity()).getDiary().getDate().toString();
+                        ((MainActivity) getActivity()).getDiary().setDate(new Date(i - 1900, i1, i2));
+                        Date date = ((MainActivity) getActivity()).getDiary().getDate();
+                        String dateText = formatter.format(date);
                         toolbarText.setText(dateText);
                         getFragmentManager().beginTransaction().detach(DiaryFragment.this).attach(DiaryFragment.this).commit();
                     }
-                }, currentDate.getYear(), currentDate.getMonthValue() - 1, currentDate.getDayOfMonth());
+                }, date.getYear() + 1900, date.getMonth(), date.getDate());
                 dialog.show();
             }
         });

@@ -8,8 +8,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.keepdiet.android.keepdiet.userData.Group;
+import com.keepdiet.android.keepdiet.userData.Target;
 import com.keepdiet.android.keepdiet.userData.User;
 import com.keepdiet.android.keepdiet.utils.BottomNavigationViewHelper;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,9 +23,21 @@ public class MainActivity extends AppCompatActivity {
     public static final String GROUP = "group";
     public static final String MORE = "more";
 
-    public User user = new User();
+    public Target target1 = new Target("Eat less than 1700 Cal", false);
+    public Target target2 = new Target("Jogging 5 miles", false);
+    public Target target3 = new Target("30 push-ups", false);
+    public Target target4 = new Target("Swimming 1 mile", false);
+    public Target target5 = new Target("Walk 20000 steps", false);
 
-    //disable back button
+    public User user = new User();
+    public Group group;// = new Group(5, 0001, "KeepDiet", new ArrayList<Integer>(Arrays.asList(1001, 1002, 1003)), "Atlanta", "Lose Weight");
+
+
+    //    public Group group1 = new Group(5, 0001, "KeepDiet", new ArrayList<Integer>(Arrays.asList(1001, 1002, 1003)), "Atlanta", "Lose Weight");
+//    public Group group2 = new Group(3, 0002, "DietKeep", new ArrayList<Integer>(Arrays.asList(1011, 1012, 1013)), "Atlanta", "Build Muscle");
+//    public User user1 = new User();
+//    public User user2 = new User();
+    //disable back button2
     @Override
     public void onBackPressed(){}
 

@@ -14,7 +14,6 @@ public class User implements Serializable {
     //identity related
     private int ID;
     private String username;
-    private List<String> targets;
 
     //diary related
     //overall

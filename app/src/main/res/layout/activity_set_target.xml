@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/setTargetLayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="#FFFFFF"
@@ -22,6 +23,25 @@
     </android.support.v7.widget.Toolbar>
 
     <TextView
+        android:id="@+id/txtSetBudget"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:textSize="22sp"
+        android:gravity="center_vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:drawablePadding="0dp"
+        android:text="Set Your Budget:" />
+    <EditText
+        android:id="@+id/budget"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:inputType = "number"
+        android:hint="Budget" />
+
+    <TextView
         android:id="@+id/txtSetTarget"
         android:layout_width="match_parent"
         android:layout_height="44dp"
@@ -31,13 +51,20 @@
         android:paddingRight="20dp"
         android:drawablePadding="0dp"
         android:text="Set Your Daily Targets:" />
-    <EditText
-        android:id="@+id/groupName"
-        android:layout_width="fill_parent"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:hint="Target" />
+        android:id="@+id/start_group_add_target_linear_layout"
+        android:orientation="vertical">
+        <EditText
+            android:id="@+id/target"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:hint="Target" />
+    </LinearLayout>
+
     <TextView
         android:id="@+id/addTarget"
         android:layout_width="match_parent"
@@ -50,5 +77,12 @@
         android:layout_marginTop="20dp"
         android:drawablePadding="0dp"
         android:text="   Add a Target" />
+
+    <Button
+        android:id="@+id/startGroupButton2"
+        android:layout_height="wrap_content"
+        android:layout_width="200dp"
+        android:layout_marginTop="30dp"
+        android:text="Go !" />
 
 </LinearLayout>

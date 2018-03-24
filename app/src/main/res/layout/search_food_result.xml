@@ -3,6 +3,21 @@
     android:layout_width="match_parent" android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/copyright_nutrix"
+        android:drawableRight="@drawable/nutritionix_logo_250px"
+        android:drawablePadding="@dimen/diary_tag_small_padding"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:padding="@dimen/diary_tag_small_padding"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/whitesmoke" />
+
     <ListView
         android:id="@+id/search_food_result_list"
         android:layout_width="match_parent"

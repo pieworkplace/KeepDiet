@@ -80,5 +80,6 @@
     <string name="delete_item_alert">Are you sure to delete this item?</string>
     <string name="cancel">Cancel</string>
     <string name="yes">Yes</string>
+    <string name="copyright_nutrix">Powered by</string>
 
 </resources>

@@ -11,13 +11,13 @@
         android:layout_width="match_parent"
         android:text="@string/diary_add"
         android:background="@color/white"
-        android:drawablePadding="@dimen/diary_tag_small_padding"
+        android:drawablePadding="@dimen/small_padding"
         android:gravity="center_vertical"
-        android:paddingTop="@dimen/diary_tag_small_padding"
-        android:paddingBottom="@dimen/diary_tag_small_padding"
-        android:paddingLeft="@dimen/diary_tag_large_padding"
+        android:paddingTop="@dimen/small_padding"
+        android:paddingBottom="@dimen/small_padding"
+        android:paddingLeft="@dimen/large_padding"
         android:drawableStart="@drawable/ic_add_black_24dp"
         android:drawableLeft="@drawable/ic_add_black_24dp"
-        android:layout_marginBottom="@dimen/diary_tag_large_padding"/>
+        android:layout_marginBottom="@dimen/large_padding"/>
 
 </RelativeLayout>

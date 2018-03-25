@@ -28,13 +28,13 @@
         android:layout_height="wrap_content"
         android:text="@string/diary_content_title"
         style="@style/TextAppearance.AppCompat.Menu"
-        android:paddingLeft="@dimen/diary_tag_large_padding"
-        android:paddingTop="@dimen/diary_tag_small_padding"/>
+        android:paddingLeft="@dimen/large_padding"
+        android:paddingTop="@dimen/small_padding"/>
     <EditText
         android:id="@+id/diary_content_title_edit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingLeft="@dimen/diary_tag_large_padding"
+        android:paddingLeft="@dimen/large_padding"
         android:hint="@string/add_food_title_example" />
     <TextView
         android:id="@+id/diary_content_unit_name"
@@ -42,13 +42,13 @@
         android:layout_height="wrap_content"
         android:text="@string/diary_content_unit_name"
         style="@style/TextAppearance.AppCompat.Menu"
-        android:paddingLeft="@dimen/diary_tag_large_padding"
-        android:paddingTop="@dimen/diary_tag_small_padding"/>
+        android:paddingLeft="@dimen/large_padding"
+        android:paddingTop="@dimen/small_padding"/>
     <EditText
         android:id="@+id/diary_content_unit_name_edit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingLeft="@dimen/diary_tag_large_padding"
+        android:paddingLeft="@dimen/large_padding"
         android:maxLines="1"
         android:hint="@string/add_food_unit_name_example"
         android:inputType=""/>
@@ -58,13 +58,13 @@
         android:layout_height="wrap_content"
         android:text="@string/diary_content_amount"
         style="@style/TextAppearance.AppCompat.Menu"
-        android:paddingLeft="@dimen/diary_tag_large_padding"
-        android:paddingTop="@dimen/diary_tag_small_padding"/>
+        android:paddingLeft="@dimen/large_padding"
+        android:paddingTop="@dimen/small_padding"/>
     <EditText
         android:id="@+id/diary_content_amount_edit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingLeft="@dimen/diary_tag_large_padding"
+        android:paddingLeft="@dimen/large_padding"
         android:maxLines="1"
         android:hint="@string/add_food_amount_example"
         android:inputType="numberDecimal"/>
@@ -74,13 +74,13 @@
         android:layout_height="wrap_content"
         android:text="@string/diary_content_calory_per_unit"
         style="@style/TextAppearance.AppCompat.Menu"
-        android:paddingLeft="@dimen/diary_tag_large_padding"
-        android:paddingTop="@dimen/diary_tag_small_padding"/>
+        android:paddingLeft="@dimen/large_padding"
+        android:paddingTop="@dimen/small_padding"/>
     <EditText
         android:id="@+id/diary_content_calory_per_unit_edit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingLeft="@dimen/diary_tag_large_padding"
+        android:paddingLeft="@dimen/large_padding"
         android:maxLines="1"
         android:hint="@string/add_food_calory_per_unit_example"
         android:inputType="numberDecimal"/>

@@ -2,26 +2,41 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_gravity="center">
+    android:layout_height="match_parent">
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:src="@drawable/ic_remove_circle_black_48dp"
-        android:layout_marginTop="@dimen/diary_tag_large_padding"/>
+        android:layout_marginTop="@dimen/huge_padding"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="@dimen/large_textsize"
-        android:layout_marginTop="@dimen/diary_tag_large_padding"
+        android:layout_marginTop="@dimen/large_padding"
+        android:layout_marginBottom="@dimen/huge_padding"
         android:gravity="center"
         android:text="@string/no_group_found"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/large_padding"
+        android:text="@string/no_group_try"/>
     <Button
         android:id="@+id/join_group"
         style="@style/KeepDietThemeButton"
-        android:layout_marginTop="@dimen/diary_tag_large_padding"
-        android:layout_marginBottom="@dimen/diary_tag_large_padding"
+        android:layout_marginTop="@dimen/small_padding"
+        android:layout_marginBottom="@dimen/small_padding"
         android:text="@string/join_a_group"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/no_group_or"/>
+    <Button
+        android:id="@+id/start_group"
+        style="@style/KeepDietThemeButton"
+        android:layout_marginTop="@dimen/small_padding"
+        android:text="@string/start_a_group"/>
 
 </LinearLayout>

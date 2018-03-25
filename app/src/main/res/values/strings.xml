@@ -80,5 +80,14 @@
     <string name="cancel">Cancel</string>
     <string name="yes">Yes</string>
     <string name="copyright_nutrix">Powered by</string>
+    <string name="no_group_or">or</string>
+    <string name="start_a_group">Start a Group</string>
+    <string name="no_group_try">Try</string>
+    <string name="find_group">Find Group</string>
+    <string name="quick_search">Quick Search</string>
+    <string name="search_by_group_name_or_id">Search by Group Name or ID</string>
+    <string name="you_can_also">Other Options</string>
+    <string name="find_people_like_you">Find People Like You</string>
+    <string name="advanced_search">Advanced Search</string>
 
 </resources>

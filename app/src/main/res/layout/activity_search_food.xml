@@ -20,7 +20,7 @@
             app:iconifiedByDefault="false"
             app:defaultQueryHint="@string/add_food_title_example"
             android:background="@drawable/rounded_corner_background"
-            android:layout_marginRight="@dimen/diary_tag_small_padding">
+            android:layout_marginRight="@dimen/small_padding">
 
         </android.support.v7.widget.SearchView>
 

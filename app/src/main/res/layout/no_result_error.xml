@@ -5,6 +5,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/no_result_error"
-        android:layout_marginTop="@dimen/diary_tag_large_padding"
+        android:layout_marginTop="@dimen/large_padding"
         android:gravity="center_horizontal"/>
 </FrameLayout>

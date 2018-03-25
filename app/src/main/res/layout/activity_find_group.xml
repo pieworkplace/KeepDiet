@@ -3,65 +3,64 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#FFFFFF"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:focusableInTouchMode="true">
     <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar_diary"
+        android:id="@+id/toolbar_find_group"
         android:background="@color/colorPrimary"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Find Group"
+            android:text="@string/find_group"
             android:textColor="@color/white"
             android:layout_gravity="center"
             android:textSize="@dimen/toolbar_textsize"/>
     </android.support.v7.widget.Toolbar>
 
     <TextView
-        android:id="@+id/findGroupName"
         android:layout_width="match_parent"
-        android:layout_height="44dp"
-        android:textSize="22sp"
-        android:gravity="center_vertical"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:drawablePadding="0dp"
-        android:text="Find Group by Group Name" />
-    <EditText
-        android:id="@+id/groupName"
-        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:hint="Group Name" />
+        android:text="@string/quick_search"
+        style="@style/TextAppearance.AppCompat.Menu"
+        android:paddingLeft="@dimen/large_padding"
+        android:paddingTop="@dimen/small_padding"
+        android:layout_marginTop="@dimen/small_padding"
+        android:layout_marginBottom="@dimen/small_padding"/>
+    <android.support.v7.widget.SearchView
+        android:id="@+id/search_group_search_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:iconifiedByDefault="false"
+        app:defaultQueryHint="@string/search_by_group_name_or_id"
+        android:background="@drawable/rounded_corner_background_border"
+        android:layout_marginLeft="@dimen/large_padding"
+        android:layout_marginRight="@dimen/large_padding"
+        android:layout_marginBottom="@dimen/large_padding">
+    </android.support.v7.widget.SearchView>
+
     <TextView
-        android:id="@+id/findGroupLocation"
         android:layout_width="match_parent"
-        android:layout_height="44dp"
-        android:textSize="22sp"
-        android:gravity="center_vertical"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:drawablePadding="0dp"
-        android:text="Or Find Group by Location" />
-    <EditText
-        android:id="@+id/groupLocation"
-        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:hint="Location" />
-
+        android:text="@string/you_can_also"
+        style="@style/TextAppearance.AppCompat.Menu"
+        android:paddingLeft="@dimen/large_padding"
+        android:paddingTop="@dimen/small_padding"
+        android:layout_marginBottom="@dimen/small_padding"/>
     <Button
-        android:id="@+id/go"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Go !"
-        android:textSize="22dp"/>
-
+        style="@style/KeepDietThemeButton"
+        android:layout_marginTop="@dimen/small_padding"
+        android:layout_marginBottom="@dimen/small_padding"
+        android:text="@string/advanced_search"/>
+    <Button
+        style="@style/KeepDietThemeButton"
+        android:layout_marginTop="@dimen/small_padding"
+        android:layout_marginBottom="@dimen/small_padding"
+        android:text="@string/start_a_group"/>
 
 </LinearLayout>

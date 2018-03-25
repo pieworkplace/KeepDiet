@@ -11,9 +11,9 @@
         tools:text="@string/diary_food_breakfast"
         style="@style/TextAppearance.AppCompat.Inverse"
         android:background="@color/colorPrimary"
-        android:paddingLeft="@dimen/diary_tag_large_padding"
-        android:paddingTop="@dimen/diary_tag_small_padding"
-        android:paddingBottom="@dimen/diary_tag_small_padding"/>
+        android:paddingLeft="@dimen/large_padding"
+        android:paddingTop="@dimen/small_padding"
+        android:paddingBottom="@dimen/small_padding"/>
     <TextView
         android:id="@+id/diary_tag_value"
         android:layout_width="match_parent"
@@ -22,9 +22,9 @@
         android:background="@color/colorPrimary"
         tools:text="200"
         style="@style/TextAppearance.AppCompat.Inverse"
-        android:paddingTop="@dimen/diary_tag_small_padding"
-        android:paddingBottom="@dimen/diary_tag_small_padding"
-        android:paddingRight="@dimen/diary_tag_large_padding"
+        android:paddingTop="@dimen/small_padding"
+        android:paddingBottom="@dimen/small_padding"
+        android:paddingRight="@dimen/large_padding"
         android:gravity="right"/>
 
 </RelativeLayout>

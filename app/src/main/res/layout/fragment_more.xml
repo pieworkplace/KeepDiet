@@ -28,8 +28,8 @@
         android:gravity="center_vertical"
         android:drawableLeft="@drawable/ic_account_circle_black_48dp"
         android:drawableTint="@color/colorPrimaryDark"
-        android:drawablePadding="@dimen/diary_tag_large_padding"
-        android:padding="@dimen/diary_tag_large_padding"
+        android:drawablePadding="@dimen/large_padding"
+        android:padding="@dimen/large_padding"
         style="@style/TextAppearance.AppCompat.Headline"
         tools:text="Haoting Li" />
 
@@ -45,8 +45,8 @@
         android:gravity="center_vertical"
         android:textSize="@dimen/toolbar_title_textsize"
         android:drawableLeft="@drawable/ic_restaurant_black_24dp"
-        android:drawablePadding="@dimen/diary_tag_large_padding"
-        android:padding="@dimen/diary_tag_large_padding"
+        android:drawablePadding="@dimen/large_padding"
+        android:padding="@dimen/large_padding"
         android:drawableTint="@color/colorPrimaryDark"
         android:text="@string/more_food_energy" />
     <View
@@ -60,8 +60,8 @@
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:drawableLeft="@drawable/ic_fitness_center_black_24dp"
-        android:drawablePadding="@dimen/diary_tag_large_padding"
-        android:padding="@dimen/diary_tag_large_padding"
+        android:drawablePadding="@dimen/large_padding"
+        android:padding="@dimen/large_padding"
         android:drawableTint="@color/colorPrimaryDark"
         android:textSize="@dimen/toolbar_title_textsize"
         android:text="@string/more_exercise_energy" />
@@ -77,8 +77,8 @@
         android:gravity="center_vertical"
         android:textSize="@dimen/toolbar_title_textsize"
         android:drawableLeft="@drawable/ic_group_black_24dp"
-        android:drawablePadding="@dimen/diary_tag_large_padding"
-        android:padding="@dimen/diary_tag_large_padding"
+        android:drawablePadding="@dimen/large_padding"
+        android:padding="@dimen/large_padding"
         android:drawableTint="@color/colorPrimaryDark"
         android:text="@string/more_find_group" />
     <View
@@ -93,8 +93,8 @@
         android:gravity="center_vertical"
         android:textSize="@dimen/toolbar_title_textsize"
         android:drawableLeft="@drawable/ic_group_add_black_24dp"
-        android:drawablePadding="@dimen/diary_tag_large_padding"
-        android:padding="@dimen/diary_tag_large_padding"
+        android:drawablePadding="@dimen/large_padding"
+        android:padding="@dimen/large_padding"
         android:drawableTint="@color/colorPrimaryDark"
         android:text="@string/more_start_group" />
     <View
@@ -109,8 +109,8 @@
         android:gravity="center_vertical"
         android:textSize="@dimen/toolbar_title_textsize"
         android:drawableLeft="@drawable/ic_settings_black_24dp"
-        android:drawablePadding="@dimen/diary_tag_large_padding"
-        android:padding="@dimen/diary_tag_large_padding"
+        android:drawablePadding="@dimen/large_padding"
+        android:padding="@dimen/large_padding"
         android:drawableTint="@color/colorPrimaryDark"
         android:text="@string/more_settings" />
     <View

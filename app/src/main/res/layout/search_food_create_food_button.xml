@@ -4,7 +4,7 @@
     <Button
         android:id="@+id/create_food_button"
         style="@style/KeepDietThemeButton"
-        android:layout_marginTop="@dimen/diary_tag_large_padding"
-        android:layout_marginBottom="@dimen/diary_tag_large_padding"
+        android:layout_marginTop="@dimen/large_padding"
+        android:layout_marginBottom="@dimen/large_padding"
         android:text="@string/diary_create_food"/>
 </FrameLayout>

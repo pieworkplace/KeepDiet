@@ -31,13 +31,14 @@ public class GroupFragment extends Fragment {
             // inflate error alert
             View errorAlertView = inflater.inflate(R.layout.no_group_error_message, container, false);
             ((FrameLayout) view.findViewById(R.id.group_fragment_no_group_error)).addView(errorAlertView);
+            view.findViewById(R.id.join_group).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    startActivity(new Intent(getActivity(), FindGroupActivity.class));
+                }
+            });
         }
-        view.findViewById(R.id.join_group).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getActivity(), FindGroupActivity.class));
-            }
-        });
+
 
 
         return view;

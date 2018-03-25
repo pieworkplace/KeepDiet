@@ -70,8 +70,7 @@
     <string name="internet_connection_error">Internet connection error. Please try again.</string>
 
     <string name="no_group_found">You are not in a group yet</string>
-    <string name="join_a_group">Join a group</string>
-    <string name="no_group_icon">no_group_icon</string>
+    <string name="join_a_group">Join a Group</string>
     <string name="group">Group</string>
 
     <string name="diary_edit_food">Edit Food</string>

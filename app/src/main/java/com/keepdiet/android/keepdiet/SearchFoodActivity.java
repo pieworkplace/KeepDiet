@@ -9,6 +9,7 @@ import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -53,7 +54,7 @@ public class SearchFoodActivity extends AppCompatActivity {
         View createFoodButton = getLayoutInflater().inflate(R.layout.search_food_create_food_button, null);
         linearLayout.addView(createFoodButton);
 
-        createFoodButton.setOnClickListener(new View.OnClickListener() {
+        (createFoodButton.findViewById(R.id.create_food_button)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivityForResult(new Intent(SearchFoodActivity.this, AddFoodActivity.class), CREATE_FOOD_IN_SEARCH);
@@ -180,7 +181,7 @@ public class SearchFoodActivity extends AppCompatActivity {
                 createFoodButton = getLayoutInflater().inflate(R.layout.search_food_create_food_button, null);
                 listView.addFooterView(createFoodButton);
             }
-            createFoodButton.setOnClickListener(new View.OnClickListener() {
+            (createFoodButton.findViewById(R.id.create_food_button)).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     startActivityForResult(new Intent(SearchFoodActivity.this, AddFoodActivity.class), CREATE_FOOD_IN_SEARCH);

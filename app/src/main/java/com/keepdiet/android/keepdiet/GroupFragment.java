@@ -38,6 +38,12 @@ public class GroupFragment extends Fragment {
                     startActivity(new Intent(getActivity(), FindGroupActivity.class));
                 }
             });
+            view.findViewById(R.id.start_group_in_group_find_error).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    startActivity(new Intent(getActivity(), StartGroupActivity.class));
+                }
+            });
         }
         return view;
     }

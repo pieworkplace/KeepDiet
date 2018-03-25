@@ -6,9 +6,13 @@ import android.os.Bundle;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 public class FindGroupActivity extends Activity {
+
+    private SearchView searchView;
+    private View rootView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,18 +28,28 @@ public class FindGroupActivity extends Activity {
             }
         });
 
-        SearchView searchView = findViewById(R.id.search_group_search_view);
-        searchView.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+        searchView = findViewById(R.id.search_group_search_view);
+        rootView = findViewById(R.id.find_group_layout);
+        searchView.setOnQueryTextFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                if (hasFocus) {
-                    Toast.makeText(FindGroupActivity.this, "yes", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(FindGroupActivity.this, FindGroupResult.class));
-                }
-                else {
-                    Toast.makeText(FindGroupActivity.this, "no", Toast.LENGTH_SHORT).show();
+            public void onFocusChange(View view, boolean hasFocus) {
+                if (hasFocus){
+                    startActivity(new Intent(FindGroupActivity.this, QuickSearchGroupActivity.class));
                 }
             }
         });
+        findViewById(R.id.start_group_in_find_group).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(FindGroupActivity.this, StartGroupActivity.class));
+            }
+        });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        searchView.setQuery("", false);
+        rootView.requestFocus();
     }
 }

@@ -89,5 +89,6 @@
     <string name="you_can_also">Other Options</string>
     <string name="find_people_like_you">Find People Like You</string>
     <string name="advanced_search">Advanced Search</string>
+    <string name="id_or_name">Group ID/Name</string>
 
 </resources>

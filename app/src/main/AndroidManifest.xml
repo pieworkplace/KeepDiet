@@ -33,7 +33,8 @@
         <activity android:name=".SearchFoodActivity" />
         <activity android:name=".EditFoodActivity" />
         <activity android:name=".EditExerciseActivity" />
-        <activity android:name=".QuickSearchGroupActivity"></activity>
+        <activity android:name=".QuickSearchGroupActivity" />
+        <activity android:name=".AdvancedSearchGroupActivity"></activity>
     </application>
 
 </manifest>

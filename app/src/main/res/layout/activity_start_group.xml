@@ -3,11 +3,10 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="#FFFFFF"
-    android:gravity="center"
     android:orientation="vertical"
     tools:context=".MainActivity">
     <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar_diary"
+        android:id="@+id/toolbar_start_group"
         android:background="@color/colorPrimary"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -21,78 +20,72 @@
     </android.support.v7.widget.Toolbar>
 
     <TextView
-        android:id="@+id/textGroupName"
+        android:id="@+id/start_group_name"
         android:layout_width="match_parent"
-        android:layout_height="44dp"
-        android:textSize="22sp"
-        android:gravity="center_vertical"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:drawablePadding="0dp"
-        android:text="Group Name:" />
-    <EditText
-        android:id="@+id/groupName"
-        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:hint="Your Group Name" />
-    <TextView
-        android:id="@+id/textGroupTarget"
-        android:layout_width="match_parent"
-        android:layout_height="44dp"
-        android:textSize="22sp"
-        android:gravity="center_vertical"
-        android:paddingLeft="20dp"
-        android:drawablePadding="0dp"
-        android:text="Group Target:" />
+        android:text="@string/start_group_name"
+        style="@style/TextAppearance.AppCompat.Menu"
+        android:paddingLeft="@dimen/large_padding"
+        android:paddingTop="@dimen/small_padding"/>
     <EditText
-        android:id="@+id/groupTarget"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:hint="Lose Weight/Build Muscle/..." />
-    <TextView
-        android:id="@+id/txtGroupLocation"
+        android:id="@+id/start_group_name_edit"
         android:layout_width="match_parent"
-        android:layout_height="44dp"
-        android:textSize="22sp"
-        android:gravity="center_vertical"
-        android:paddingLeft="20dp"
-        android:drawablePadding="0dp"
-        android:text="Group Location:" />
-    <EditText
-        android:id="@+id/groupLocation"
-        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:hint="Specify the Location to City" />
-    <TextView
-        android:id="@+id/txtMaxMember"
-        android:layout_width="match_parent"
-        android:layout_height="44dp"
-        android:textSize="22sp"
-        android:gravity="center_vertical"
-        android:paddingLeft="20dp"
-        android:drawablePadding="0dp"
-        android:text="Maximum Group Member" />
+        android:paddingLeft="@dimen/large_padding"
+        android:hint="@string/start_group_name_hint" />
 
+    <TextView
+        android:id="@+id/start_group_goal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/start_group_goal"
+        style="@style/TextAppearance.AppCompat.Menu"
+        android:paddingLeft="@dimen/large_padding"
+        android:paddingTop="@dimen/small_padding"/>
     <Spinner
-        android:id="@+id/MaxMember"
-        android:layout_width="wrap_content"
+        android:id="@+id/start_group_goal_edit"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:entries="@array/maxMember"
-        android:layout_marginLeft="10dp"
-        android:layout_gravity="left" />
+        android:entries="@array/start_group_goal"
+        android:padding="@dimen/small_padding"
+        android:background="@drawable/rounded_corner_background_border_for_spinner"
+        android:layout_margin="@dimen/small_padding"/>
 
-    <Button
-        android:id="@+id/startGroupButton"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_width="200dp"
-        android:layout_marginTop="30dp"
-        android:text="Next Step !" />
+        android:gravity="center_vertical">
+        <Spinner
+            android:id="@+id/start_group_more_less_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:entries="@array/start_group_more_less"
+            android:padding="@dimen/small_padding"
+            android:background="@drawable/rounded_corner_background_border_for_spinner"
+            android:layout_margin="@dimen/small_padding"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:digits="0123456789"
+            android:inputType="number"
+            android:paddingLeft="@dimen/large_padding"
+            android:hint="@string/enter_your_calories_goal"/>
+    </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/daily_chip"
+        android:layout_marginLeft="@dimen/large_padding"
+        android:layout_marginTop="@dimen/small_padding"
+        style="@style/TextAppearance.AppCompat.Menu" />
+    <EditText
+        android:id="@+id/start_group_chip_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/large_padding"
+        android:digits="0123456789"
+        android:inputType="number"
+        android:hint="@string/start_group_chip_hint" />
 
 
 </LinearLayout>

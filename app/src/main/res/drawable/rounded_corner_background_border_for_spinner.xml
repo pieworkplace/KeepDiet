@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+<item>
+    <shape xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <!-- 设置透明背景色 -->
+        <solid android:color="#00ffffff" />
+
+        <!-- 设置一个黑色边框 -->
+        <stroke
+            android:width="1dp"
+            android:color="@color/colorPrimaryDark" />
+        <!-- 设置四个圆角的半径 -->
+        <corners
+            android:bottomLeftRadius="2dp"
+            android:bottomRightRadius="2dp"
+            android:topLeftRadius="2dp"
+            android:topRightRadius="2dp" />
+        <padding android:bottom="3dp" android:left="24dp" android:right="3dp" android:top="3dp" />
+    </shape>
+</item>
+<item
+    android:drawable="@drawable/ic_arrow_drop_down_black_24dp"
+    android:gravity="right"/>
+</layer-list>

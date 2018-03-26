@@ -27,7 +27,7 @@
         <activity android:name=".StartGroupActivity" />
         <activity android:name=".SetTarget" />
         <activity android:name=".FindGroupActivity" />
-        <activity android:name=".GroupInformation" />
+        <activity android:name=".GroupInformationActivity" />
         <activity android:name=".AddFoodActivity" />
         <activity android:name=".AddExerciseActivity" />
         <activity android:name=".SearchFoodActivity" />

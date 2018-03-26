@@ -9,7 +9,7 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
     <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar_diary"
+        android:id="@+id/toolbar_group_information"
         android:background="@color/colorPrimary"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -24,16 +24,13 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="44dp"
-        android:textSize="22sp"
+        android:layout_height="wrap_content"
+        style="@style/TextAppearance.AppCompat.Menu"
         android:gravity="center_vertical"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
         android:drawableLeft="@drawable/ic_people_black_36dp"
-        android:drawablePadding="0dp"
-        android:text="  Group Name:" />
+        android:text="@string/group_name" />
     <TextView
-        android:id="@+id/groupName"
+        android:id="@+id/group_name"
         android:layout_width="match_parent"
         android:layout_height="44dp"
         android:textSize="22sp"
@@ -41,28 +38,7 @@
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
         android:drawablePadding="0dp"
-        android:text="KeepDiet" />
-    <TextView
-    android:id="@+id/findGroupLocation"
-    android:layout_width="match_parent"
-    android:layout_height="44dp"
-    android:textSize="22sp"
-    android:gravity="center_vertical"
-    android:drawableLeft="@drawable/ic_location_on_black_36dp"
-    android:paddingLeft="20dp"
-    android:paddingRight="20dp"
-    android:drawablePadding="0dp"
-    android:text="  Group Location" />
-    <TextView
-        android:id="@+id/groupLocation"
-        android:layout_width="match_parent"
-        android:layout_height="44dp"
-        android:textSize="22sp"
-        android:gravity="center_vertical"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:drawablePadding="0dp"
-        android:text="Atlanta" />
+        tools:text="KeepDiet" />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="44dp"
@@ -103,26 +79,6 @@
         android:paddingRight="20dp"
         android:drawablePadding="0dp"
         android:text="5" />
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="44dp"
-        android:textSize="22sp"
-        android:gravity="center_vertical"
-        android:drawableLeft="@drawable/ic_vertical_align_top_black_36dp"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:drawablePadding="0dp"
-        android:text=" Maximum Group Member" />
-    <TextView
-        android:id="@+id/maxMember"
-        android:layout_width="match_parent"
-        android:layout_height="44dp"
-        android:textSize="22sp"
-        android:gravity="center_vertical"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:drawablePadding="0dp"
-        android:text="6" />
 
     <Button
         android:id="@+id/join"

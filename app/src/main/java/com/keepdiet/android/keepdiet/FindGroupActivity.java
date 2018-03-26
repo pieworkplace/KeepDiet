@@ -38,6 +38,12 @@ public class FindGroupActivity extends Activity {
                 }
             }
         });
+        findViewById(R.id.advanced_search_in_find_group).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(FindGroupActivity.this, AdvancedSearchGroupActivity.class));
+            }
+        });
         findViewById(R.id.start_group_in_find_group).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

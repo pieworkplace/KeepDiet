@@ -1,6 +1,5 @@
 package com.keepdiet.android.keepdiet;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -81,7 +80,7 @@ public class QuickSearchGroupActivity extends AppCompatActivity {
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent intent = new Intent(QuickSearchGroupActivity.this, GroupInformation.class);
+                    Intent intent = new Intent(QuickSearchGroupActivity.this, GroupInformationActivity.class);
                     intent.putExtra("Group", groupList.get(position));
                     startActivity(intent);
                 }

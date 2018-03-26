@@ -11,7 +11,6 @@ import android.view.View;
 import android.widget.EditText;
 
 import com.keepdiet.android.keepdiet.userData.Exercise;
-import com.keepdiet.android.keepdiet.userData.Food;
 
 public class AddExerciseActivity extends AppCompatActivity {
 
@@ -20,7 +19,7 @@ public class AddExerciseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_exercise);
         Toolbar toolbar = findViewById(R.id.toolbar_add_exercise);
-        toolbar.inflateMenu(R.menu.add_food_menu);
+        toolbar.inflateMenu(R.menu.check_menu);
         toolbar.setTitle("");
         toolbar.setNavigationIcon(R.drawable.ic_arrow_back_black_24dp);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {

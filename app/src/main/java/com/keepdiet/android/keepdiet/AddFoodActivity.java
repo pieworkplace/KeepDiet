@@ -6,7 +6,6 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.text.Editable;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
@@ -30,7 +29,7 @@ public class AddFoodActivity extends AppCompatActivity {
         }
 
         Toolbar toolbar = findViewById(R.id.toolbar_add_food);
-        toolbar.inflateMenu(R.menu.add_food_menu);
+        toolbar.inflateMenu(R.menu.check_menu);
         toolbar.setTitle("");
         toolbar.setNavigationIcon(R.drawable.ic_arrow_back_black_24dp);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {

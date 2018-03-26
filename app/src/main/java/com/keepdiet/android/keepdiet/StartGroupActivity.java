@@ -1,7 +1,6 @@
 package com.keepdiet.android.keepdiet;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
@@ -14,7 +13,7 @@ public class StartGroupActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start_group);
         Toolbar toolbar = findViewById(R.id.toolbar_start_group);
-        toolbar.inflateMenu(R.menu.add_food_menu);
+        toolbar.inflateMenu(R.menu.check_menu);
         toolbar.setTitle("");
         toolbar.setNavigationIcon(R.drawable.ic_arrow_back_black_24dp);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {

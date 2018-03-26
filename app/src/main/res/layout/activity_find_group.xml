@@ -54,6 +54,7 @@
         android:paddingTop="@dimen/small_padding"
         android:layout_marginBottom="@dimen/small_padding"/>
     <Button
+        android:id="@+id/advanced_search_in_find_group"
         style="@style/KeepDietThemeButton"
         android:layout_marginTop="@dimen/small_padding"
         android:layout_marginBottom="@dimen/small_padding"

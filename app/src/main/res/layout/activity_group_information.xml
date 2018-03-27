@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/group_information_linear_layout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#FFFFFF"
     android:gravity="center"
     android:orientation="vertical"
     tools:context=".MainActivity">
@@ -22,70 +21,18 @@
             android:textSize="@dimen/toolbar_textsize"/>
     </android.support.v7.widget.Toolbar>
 
-    <TextView
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/group_information_item_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        style="@style/TextAppearance.AppCompat.Menu"
-        android:gravity="center_vertical"
-        android:drawableLeft="@drawable/ic_people_black_36dp"
-        android:text="@string/group_name" />
-    <TextView
-        android:id="@+id/group_name"
-        android:layout_width="match_parent"
-        android:layout_height="44dp"
-        android:textSize="22sp"
-        android:gravity="center_vertical"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:drawablePadding="0dp"
-        tools:text="KeepDiet" />
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="44dp"
-        android:textSize="22sp"
-        android:gravity="center_vertical"
-        android:drawableLeft="@drawable/ic_star_black_36dp"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:drawablePadding="0dp"
-        android:text="  Group Target" />
-    <TextView
-        android:id="@+id/groupTarget"
-        android:layout_width="match_parent"
-        android:layout_height="44dp"
-        android:textSize="22sp"
-        android:gravity="center_vertical"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:drawablePadding="0dp"
-        android:text="Lose Weight" />
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="44dp"
-        android:textSize="22sp"
-        android:gravity="center_vertical"
-        android:drawableLeft="@drawable/ic_format_list_numbered_black_36dp"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:drawablePadding="0dp"
-        android:text=" Current Group Member" />
-    <TextView
-        android:id="@+id/member"
-        android:layout_width="match_parent"
-        android:layout_height="44dp"
-        android:textSize="22sp"
-        android:gravity="center_vertical"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:drawablePadding="0dp"
-        android:text="5" />
+        android:layout_below="@id/toolbar_group_information"/>
 
     <Button
-        android:id="@+id/join"
-        android:layout_width="244dp"
-        android:layout_height="wrap_content"
-        android:text="JOIN !"
-        android:textSize="22dp"/>
+        android:id="@+id/join_or_delete"
+        tools:text="Join the group"
+        style="@style/KeepDietThemeButton"
+        android:layout_below="@id/group_information_item_list"
+        android:layout_margin="@dimen/large_padding"/>
 
 
-</LinearLayout>
+</RelativeLayout>

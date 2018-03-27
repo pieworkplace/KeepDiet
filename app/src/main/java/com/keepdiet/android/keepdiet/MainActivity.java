@@ -27,20 +27,10 @@ public class MainActivity extends AppCompatActivity{
     public static final String GROUP = "group";
     public static final String MORE = "more";
 
-    public Target target1 = new Target("Eat less than 1700 Cal", false);
-    public Target target2 = new Target("Jogging 5 miles", false);
-    public Target target3 = new Target("30 push-ups", false);
-    public Target target4 = new Target("Swimming 1 mile", false);
-    public Target target5 = new Target("Walk 20000 steps", false);
-
-    public Group group;// = new Group(5, 0001, "KeepDiet", new ArrayList<Integer>(Arrays.asList(1001, 1002, 1003)), "Atlanta", "Lose Weight");
+    public Group group;
 
     public Diary diary = new Diary();
 
-    //    public Group group1 = new Group(5, 0001, "KeepDiet", new ArrayList<Integer>(Arrays.asList(1001, 1002, 1003)), "Atlanta", "Lose Weight");
-//    public Group group2 = new Group(3, 0002, "DietKeep", new ArrayList<Integer>(Arrays.asList(1011, 1012, 1013)), "Atlanta", "Build Muscle");
-//    public User user1 = new User();
-//    public User user2 = new User();
     //disable back button2
     @Override
     public void onBackPressed(){}

@@ -20,8 +20,8 @@ import java.util.List;
 
 public class QuickSearchGroupActivity extends AppCompatActivity {
 
-    public Group group1 = new Group(5, 0001, "KeepDiet", new ArrayList<Integer>(Arrays.asList(1001, 1002, 1003)), "Atlanta", "Lose Weight");
-    public Group group2 = new Group(3, 0002, "DietKeep", new ArrayList<Integer>(Arrays.asList(1011, 1012, 1013)), "Atlanta", "Build Muscle");
+    public Group group1 = new Group();
+    public Group group2 = new Group();
     List<Group> groupList= new ArrayList<>();
 
     @Override
@@ -40,6 +40,7 @@ public class QuickSearchGroupActivity extends AppCompatActivity {
 
         ListView groupListView = (ListView) findViewById((R.id.group_list_view));
 
+        group1.setName("MuscleGain");
         groupList.add(group1);
         groupList.add(group2);
 
@@ -82,6 +83,7 @@ public class QuickSearchGroupActivity extends AppCompatActivity {
                 public void onClick(View view) {
                     Intent intent = new Intent(QuickSearchGroupActivity.this, GroupInformationActivity.class);
                     intent.putExtra("Group", groupList.get(position));
+                    intent.putExtra("joinOrDelete", "join");
                     startActivity(intent);
                 }
             });
@@ -90,7 +92,7 @@ public class QuickSearchGroupActivity extends AppCompatActivity {
             TextView groupTargetTextView = view.findViewById((R.id.group_detail));
 
             groupNameTextView.setText(myGroups.get(position).getName());
-            groupTargetTextView.setText(myGroups.get(position).getGroupTarget());
+            groupTargetTextView.setText(myGroups.get(position).getGroupGoal().toString());
 
             return view;
         }

@@ -1,6 +1,9 @@
 package com.keepdiet.android.keepdiet.userData;
 
+import com.keepdiet.android.keepdiet.R;
+
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -14,33 +17,16 @@ public class Group implements Serializable{
     private List<Integer> users;
     private String location;
     private String groupTarget;
-    private int currentUserNum;
+    private GroupGoal groupGoal;
+    private int chip;
 
-    public Group(int maxUser, int ID, String name, List<Integer> users, String location, String groupTarget) {
-        this.maxUser = maxUser;
-        this.ID = ID;
-        this.name = name;
-        this.users = users;
-        this.location = location;
-        this.groupTarget = groupTarget;
-    }
-
-
-
-    public int getMaxUser() {
-        return maxUser;
-    }
-
-    public void setMaxUser(int maxUser) {
-        this.maxUser = maxUser;
-    }
-
-    public int getID() {
-        return ID;
-    }
-
-    public void setID(int ID) {
-        this.ID = ID;
+    public Group() {
+        this.maxUser = 10;
+        this.ID = 12345;
+        this.name = "KeepDiet";
+        this.users = new ArrayList<Integer>(){{add(5); add(10);}};
+        this.groupGoal = new CaloriesGroupGoal(true, 2000);
+        chip = 50;
     }
 
     public String getName() {
@@ -51,24 +37,20 @@ public class Group implements Serializable{
         this.name = name;
     }
 
-    public String getLocation() {
-        return location;
-    }
-
-    public void setLocation(String location) {
-        this.location = location;
-    }
-
     public String getGroupTarget() {
         return groupTarget;
     }
 
-    public void setGroupTarget(String target) {
-        groupTarget = groupTarget;
+    public GroupGoal getGroupGoal() {
+        return groupGoal;
     }
 
-    public int getCurrentUserNum() {
-        return users == null ? 0 : users.size();
+    public List<List<String>> groupToList(){
+        List result =  new ArrayList<>();
+        result.add(new ArrayList<String>(){{add(("Group Name")); add(name);}});
+        result.add(new ArrayList<String>(){{add(("Group Goal")); add(groupGoal.toString());}});
+        result.add(new ArrayList<String>(){{add(("Daily Chip")); add(Integer.toString(chip));}});
+        return result;
     }
 
 }

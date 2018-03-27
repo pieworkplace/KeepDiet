@@ -102,5 +102,8 @@
     <string name="start_group">Start Group</string>
     <string name="advanced_group_search">Advanced Group Search</string>
     <string name="group_name">Group Name</string>
+    <string name="group_goal">Group Goal</string>
+    <string name="join_this_group">Join this group</string>
+    <string name="delete_this_group">Quit this group</string>
 
 </resources>

@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "172510006357",
+    "firebase_url": "https://keepdiet-99660.firebaseio.com",
+    "project_id": "keepdiet-99660",
+    "storage_bucket": "keepdiet-99660.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:172510006357:android:a6fdbde6a548efe1",
+        "android_client_info": {
+          "package_name": "com.keepdiet.android.keepdiet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "172510006357-md5eihov6hahg8k42cucjqsc6acoanoc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.keepdiet.android.keepdiet",
+            "certificate_hash": "54b517e3f26bab842e2edcaf3b5635951b47b9aa"
+          }
+        },
+        {
+          "client_id": "172510006357-7nqmvf7n3p1shsra0on7qhbak7sq5ijg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAAz-r4fqBmx8ZpTC_RM-6Ndy8qAUZaJAs"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "172510006357-7nqmvf7n3p1shsra0on7qhbak7sq5ijg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

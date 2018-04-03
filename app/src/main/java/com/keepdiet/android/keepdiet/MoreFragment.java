@@ -3,6 +3,7 @@ package com.keepdiet.android.keepdiet;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -11,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.keepdiet.android.keepdiet.userData.Diary;
+
 
 
 /**
@@ -33,6 +35,7 @@ public class MoreFragment extends Fragment {
         ((TextView) view.findViewById(R.id.more_account)).setText("TODO");
         return view;
     }
+
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         view.findViewById(R.id.more_start_group).setOnClickListener(new View.OnClickListener() {
@@ -47,6 +50,15 @@ public class MoreFragment extends Fragment {
                 startActivity(new Intent(getActivity(), FindGroupActivity.class));
             }
         });
-    }
 
+        view.findViewById(R.id.log_out_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), SplashActivity.class);
+                intent.putExtra("haveToReLogin", true);
+                startActivity(intent);
+                getActivity().finish();
+            }
+        });
+    }
 }

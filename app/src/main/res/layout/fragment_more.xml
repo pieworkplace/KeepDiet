@@ -20,18 +20,31 @@
             android:layout_gravity="center"
             android:textSize="@dimen/toolbar_textsize"/>
     </android.support.v7.widget.Toolbar>
-
-    <TextView
-        android:id="@+id/more_account"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:drawableLeft="@drawable/ic_account_circle_black_48dp"
-        android:drawableTint="@color/colorPrimaryDark"
-        android:drawablePadding="@dimen/large_padding"
-        android:padding="@dimen/large_padding"
-        style="@style/TextAppearance.AppCompat.Headline"
-        tools:text="Haoting Li" />
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/more_account"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:drawableLeft="@drawable/ic_account_circle_black_48dp"
+            android:drawableTint="@color/colorPrimaryDark"
+            android:drawablePadding="@dimen/large_padding"
+            android:padding="@dimen/large_padding"
+            style="@style/TextAppearance.AppCompat.Headline"
+            tools:text="Haoting Li" />
+        <ImageView
+            android:id="@+id/log_out_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_exit_to_app_black_24dp"/>
+
+    </LinearLayout>
+
+
 
     <View
         android:layout_width="match_parent"

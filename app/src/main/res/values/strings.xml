@@ -105,5 +105,7 @@
     <string name="group_goal">Group Goal</string>
     <string name="join_this_group">Join this group</string>
     <string name="delete_this_group">Quit this group</string>
+    <string name="login_in_error">Login failed. Please try again.</string>
+    <string name="welcome_user">Welcome,</string>
 
 </resources>

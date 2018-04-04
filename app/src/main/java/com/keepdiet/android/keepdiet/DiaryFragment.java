@@ -96,6 +96,7 @@ public class DiaryFragment extends Fragment {
                         Date date = ((MainActivity) getActivity()).getDiary().getDate();
                         String dateText = formatter.format(date);
                         toolbarText.setText(dateText);
+                        ((MainActivity) getActivity()).getDiary().addBreakfastList(new Food("Red Velvet", 750, 1, "piece"));
                         getFragmentManager().beginTransaction().detach(DiaryFragment.this).attach(DiaryFragment.this).commit();
                     }
                 }, date.getYear() + 1900, date.getMonth(), date.getDate());

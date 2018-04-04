@@ -11,17 +11,13 @@ import java.util.List;
  */
 
 public class Group implements Serializable{
-    private int maxUser;
     private int ID;
     private String name;
     private List<Integer> users;
-    private String location;
-    private String groupTarget;
     private GroupGoal groupGoal;
     private int chip;
 
     public Group() {
-        this.maxUser = 10;
         this.ID = 12345;
         this.name = "KeepDiet";
         this.users = new ArrayList<Integer>(){{add(5); add(10);}};
@@ -35,10 +31,6 @@ public class Group implements Serializable{
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getGroupTarget() {
-        return groupTarget;
     }
 
     public GroupGoal getGroupGoal() {

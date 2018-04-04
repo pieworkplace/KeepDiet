@@ -1,6 +1,6 @@
 package com.keepdiet.android.keepdiet;
 
-import android.app.DatePickerDialog;
+import android.os.AsyncTask;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.FragmentManager;
@@ -8,17 +8,12 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.DatePicker;
 
 import com.keepdiet.android.keepdiet.userData.Group;
-import com.keepdiet.android.keepdiet.userData.Target;
+import com.keepdiet.android.keepdiet.userData.User;
 import com.keepdiet.android.keepdiet.utils.BottomNavigationViewHelper;
-
-import java.util.ArrayList;
-import java.util.Arrays;
 
 import com.keepdiet.android.keepdiet.userData.Diary;
-import com.keepdiet.android.keepdiet.utils.BottomNavigationViewHelper;
 
 public class MainActivity extends AppCompatActivity{
 
@@ -26,6 +21,8 @@ public class MainActivity extends AppCompatActivity{
     public static final String FEED = "feed";
     public static final String GROUP = "group";
     public static final String MORE = "more";
+
+    private User user;
 
     public Group group;
 
@@ -39,6 +36,9 @@ public class MainActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //initialize user
+
 
         //disable bottom navigation view shifting mode
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation_bar);
@@ -104,4 +104,7 @@ public class MainActivity extends AppCompatActivity{
         return diary;
     }
 
+    public User getUser() {
+        return user;
+    }
 }

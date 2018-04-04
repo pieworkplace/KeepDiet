@@ -11,6 +11,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.keepdiet.android.keepdiet.userData.Diary;
 
 
@@ -32,7 +34,7 @@ public class MoreFragment extends Fragment {
         // Inflate the layout for this fragment
         Diary diary = ((MainActivity) getActivity()).getDiary();
         View view = inflater.inflate(R.layout.fragment_more, container, false);
-        ((TextView) view.findViewById(R.id.more_account)).setText("TODO");
+        ((TextView) view.findViewById(R.id.more_account)).setText(FirebaseAuth.getInstance().getCurrentUser().getDisplayName());
         return view;
     }
 

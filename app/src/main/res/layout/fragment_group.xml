@@ -21,6 +21,16 @@
             android:textSize="@dimen/toolbar_textsize"/>
     </android.support.v7.widget.Toolbar>
 
+    <ListView
+        android:id="@+id/group_fragment_groups"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </ListView>
+
+    <View
+        android:layout_height="1dp"
+        android:layout_width="match_parent"
+        android:background="@color/colorPrimary" />
     <FrameLayout
         android:id="@+id/group_fragment_no_group_error"
         android:layout_width="match_parent"

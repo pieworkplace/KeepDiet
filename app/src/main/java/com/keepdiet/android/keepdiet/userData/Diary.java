@@ -234,7 +234,7 @@ public class Diary implements Serializable {
         userID = 0;
         date = new Date();
 
-        caloryGoal = 2000;
+        caloryGoal = 4000;
         caloryBurned = 0;
         caloryConsumed = 0;
         caloryRemaining = caloryGoal - caloryConsumed + caloryBurned;
@@ -246,11 +246,6 @@ public class Diary implements Serializable {
 
         exerciseList = new ArrayList<Exercise>();
 
-        addDinnerList(new Food("Fried Chicken", 200, 1, "pound"));
-        addDinnerList(new Food("Fried Chicken", 200, 1, "pound"));
-        addBreakfastList(new Food("Fried Chicken", 200, 1, "pound"));
-        addExerciseList(new Exercise("running", 200, 1, "lalala"));
-        addExerciseList(new Exercise("running", 200, 1, "lalala"));
     }
 
 

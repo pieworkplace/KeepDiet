@@ -49,7 +49,7 @@ public class QuickSearchGroupActivity extends AppCompatActivity {
 
     }
 
-    private class GroupListAdapter extends BaseAdapter {
+    public class GroupListAdapter extends BaseAdapter {
 
         List<Group> myGroups;
 

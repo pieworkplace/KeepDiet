@@ -3,18 +3,17 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/ocean"
     tools:context="com.keepdiet.android.keepdiet.FeedFragment">
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar_feed"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/app_name"
-            android:textColor="@color/black"
-            android:textStyle="italic"
+            android:textColor="@color/white"
             android:layout_gravity="center"
             android:textSize="@dimen/toolbar_textsize"/>
     </android.support.v7.widget.Toolbar>
@@ -55,13 +54,19 @@
                     android:paddingRight="10dp"/>
 
                 <TextView
+                    android:id="@+id/aaa"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/mike"
-                    android:text="Today I am very happy to achieve my goals and gained 50 points in my own property.\n I am only 160lbs now and I think I am in my strongest period during my whole life.\n Cheers!!!!!"
+                    android:text="Today I burned 130cal and gained 50 points in my own property.\n I am only 160lbs now and I think I am in my strongest period during my whole life.\n Cheers!!!!!"
                     android:textStyle="italic"
-                    android:paddingLeft="20dp"
-                    android:paddingBottom="30dp"/>
+                    android:paddingLeft="20dp" />
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:src="@drawable/pic1"
+                    android:layout_marginBottom="@dimen/large_padding"
+                    android:layout_below="@id/aaa"/>
             </RelativeLayout>
 
             <RelativeLayout
@@ -125,13 +130,19 @@
                     android:paddingRight="10dp"/>
 
                 <TextView
+                    android:id="@+id/bbb"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/Olivia"
-                    android:text="The weather is very nice today! I can't wait exercising a little bit and KeepDiet! \n Does anyone else want to join us @CRC_Georgia_Tech \n Let's have fun today!!!"
+                    android:text="This is what I have for lunch!"
                     android:textStyle="italic"
-                    android:paddingLeft="20dp"
-                    android:paddingBottom="30dp"/>
+                    android:paddingLeft="20dp"/>
+                <ImageView
+                    android:layout_below="@id/bbb"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:src="@drawable/pic2"
+                    android:layout_marginBottom="@dimen/large_padding"/>
             </RelativeLayout>
 
 

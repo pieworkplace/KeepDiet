@@ -21,7 +21,6 @@ public class Group implements Serializable{
         this.ID = 12345;
         this.name = "KeepDiet";
         this.users = new ArrayList<Integer>(){{add(5); add(10);}};
-        this.groupGoal = new CaloriesGroupGoal(true, 2000);
         chip = 50;
     }
 
@@ -31,6 +30,10 @@ public class Group implements Serializable{
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public void setGroupGoal(GroupGoal groupGoal) {
+        this.groupGoal = groupGoal;
     }
 
     public GroupGoal getGroupGoal() {

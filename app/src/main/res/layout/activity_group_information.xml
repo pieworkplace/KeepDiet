@@ -27,11 +27,131 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/toolbar_group_information"/>
 
+    <TextView
+        android:id="@+id/mission_completed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/group_information_item_list"
+        android:layout_margin="@dimen/large_padding"
+        android:drawableLeft="@drawable/ic_check_circle_green_500_24dp"
+        android:gravity="center"
+        android:text="You have completed your goal today, yeah!"/>
+
+    <TextView
+        android:id="@+id/ranking"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/mission_completed"
+        android:text="Group Ranking:"
+        android:textColor="@color/black"
+        android:layout_marginLeft="@dimen/large_padding"
+        android:layout_marginBottom="@dimen/small_padding"/>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/find_group_result_list_view_layout"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/small_padding"
+        android:gravity="center_vertical"
+        android:layout_below="@id/ranking">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/small_padding"
+            android:layout_marginRight="@dimen/small_padding"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/ic_person_outline_black_24dp"/>
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Menu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Wanyang Guo"
+                android:singleLine="true"
+                android:ellipsize="end"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="2"
+                android:layout_marginLeft="@dimen/small_padding"
+                android:ellipsize="end"
+                android:gravity="end"
+                android:text="4980cal today.\n180 chips gained."
+                 />
+    </LinearLayout>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/find_group_result_list_view_layout2"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/small_padding"
+        android:gravity="center_vertical"
+        android:layout_below="@id/find_group_result_list_view_layout">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/small_padding"
+            android:layout_marginRight="@dimen/small_padding"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/ic_person_outline_black_24dp"/>
+
+        <TextView
+            style="@style/TextAppearance.AppCompat.Menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="You"
+            android:singleLine="true"
+            android:ellipsize="end"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="2"
+            android:layout_marginLeft="@dimen/small_padding"
+            android:ellipsize="end"
+            android:text="4060cal today.\n80 chips gained."
+            android:gravity="end"/>
+    </LinearLayout>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/find_group_result_list_view_layout3"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/small_padding"
+        android:gravity="center_vertical"
+        android:layout_below="@id/find_group_result_list_view_layout2">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/small_padding"
+            android:layout_marginRight="@dimen/small_padding"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/ic_person_outline_black_24dp"/>
+
+        <TextView
+            style="@style/TextAppearance.AppCompat.Menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Junlin Liu"
+            android:singleLine="true"
+            android:ellipsize="end"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="2"
+            android:layout_marginLeft="@dimen/small_padding"
+            android:ellipsize="end"
+            android:text="3980cal today.\n20 chips losed."
+            android:gravity="end"/>
+    </LinearLayout>
+
     <Button
         android:id="@+id/join_or_delete"
         tools:text="Join the group"
         style="@style/KeepDietThemeButton"
-        android:layout_below="@id/group_information_item_list"
+        android:layout_below="@id/find_group_result_list_view_layout3"
         android:layout_margin="@dimen/large_padding"/>
 
 

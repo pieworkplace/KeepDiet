@@ -3,19 +3,19 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:src="@drawable/ic_remove_circle_black_48dp"
-        android:layout_marginTop="@dimen/huge_padding"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/large_padding"
-        android:layout_marginBottom="@dimen/huge_padding"
-        android:gravity="center"
-        android:text="@string/no_group_found"/>
+    <!--<ImageView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:src="@drawable/ic_remove_circle_black_48dp"-->
+        <!--android:layout_marginTop="@dimen/huge_padding"/>-->
+    <!--<TextView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginTop="@dimen/large_padding"-->
+        <!--android:layout_marginBottom="@dimen/huge_padding"-->
+        <!--android:gravity="center"-->
+        <!--android:text="@string/no_group_found"/>-->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
